@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TweenTransform can accept custom styles 1`] = `
+<div
+  style={
+    Object {
+      "background": "black",
+      "transform": "none",
+      "transitionDelay": null,
+      "transitionDuration": "500ms",
+      "transitionProperty": "transform",
+      "transitionTimingFunction": "linear",
+    }
+  }
+/>
+`;
+
+exports[`TweenTransform renders 1`] = `
+<div
+  style={
+    Object {
+      "transform": "none",
+      "transitionDelay": null,
+      "transitionDuration": "500ms",
+      "transitionProperty": "transform",
+      "transitionTimingFunction": "linear",
+    }
+  }
+/>
+`;
+
+exports[`TweenTransform sets finish 1`] = `
+<div
+  style={
+    Object {
+      "transform": "none",
+      "transitionDelay": null,
+      "transitionDuration": "500ms",
+      "transitionProperty": "transform",
+      "transitionTimingFunction": "linear",
+    }
+  }
+/>
+`;
+
+exports[`TweenTransform sets start 1`] = `
+<div
+  style={
+    Object {
+      "transform": "translateX(10em)",
+      "transitionDelay": null,
+      "transitionDuration": "500ms",
+      "transitionProperty": "transform",
+      "transitionTimingFunction": "linear",
+    }
+  }
+/>
+`;
+
+exports[`TweenTransform sets transitionDelay with delay prop 1`] = `
+<div
+  style={
+    Object {
+      "transform": "none",
+      "transitionDelay": "1s",
+      "transitionDuration": "500ms",
+      "transitionProperty": "transform",
+      "transitionTimingFunction": "linear",
+    }
+  }
+/>
+`;
+
+exports[`TweenTransform sets transitionDuration with duration prop 1`] = `
+<div
+  style={
+    Object {
+      "transform": "none",
+      "transitionDelay": null,
+      "transitionDuration": "1s",
+      "transitionProperty": "transform",
+      "transitionTimingFunction": "linear",
+    }
+  }
+/>
+`;
+
+exports[`TweenTransform sets transitionTimingFunction with timingFn prop 1`] = `
+<div
+  style={
+    Object {
+      "transform": "none",
+      "transitionDelay": null,
+      "transitionDuration": "500ms",
+      "transitionProperty": "transform",
+      "transitionTimingFunction": "ease-in-out",
+    }
+  }
+/>
+`;
