@@ -1,7 +1,6 @@
 import React from 'react';
 import FadeTranform from './index.jsx';
 import renderer from 'react-test-renderer';
-import ReactTestUtils from 'react-dom/test-utils';
 
 describe('FadeTranform', () => {
     test('renders', () => {
