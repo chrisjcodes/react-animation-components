@@ -2,19 +2,19 @@ import React from 'react';
 import { node, number } from 'prop-types';
 import { TransitionGroup } from 'react-transition-group';
 
-const Stagger = ({ children, chunk, delay, ...props }) => {
-    const getDelay = idx => {
-        if (chunk) {
-            return (idx % chunk) * delay;
-        }
-        return idx * delay;
-    };
+export const getStaggerDelay = (idx, props) => {
+    if (props.chunk) {
+        return (idx % props.chunk) * props.delay;
+    }
+    return idx * props.delay;
+};
 
+const Stagger = ({ children, ...props }) => {
     return (
         <TransitionGroup appear {...props}>
             {React.Children.map(children, (child, i) =>
                 React.cloneElement(child, {
-                    delay: `${getDelay(i)}ms`,
+                    delay: `${getStaggerDelay(i, props)}ms`,
                 })
             )}
         </TransitionGroup>
