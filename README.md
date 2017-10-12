@@ -9,6 +9,7 @@ A set of React Transition Group components (https://github.com/reactjs/react-tra
   * [FadeTransform](#fadetransform)
 - [Group Components](#group-components)
   * [Stagger](#stagger)
+  * [Random](#random)
 
 
 ## Installation
@@ -110,7 +111,7 @@ import { FadeTransform } from 'react-animation-components'
 
 ### Stagger
 
-Uses `TransitionGroup` to stagger in sets of animation components
+Uses `TransitionGroup` to stagger `in` on a set of animation components
 
 #### Props
 
@@ -148,4 +149,42 @@ const items = ['first', 'second', 'third', 'fourth', 'fifth'];
         )
     )}
 </Stagger>
+```
+### Random
+
+Uses `TransitionGroup` to randomize `in` on a set of animation components
+
+#### Props
+
+Key | Description | Example | Type | Default Value
+------------ | -------------| -------------| -------------| -------------
+minDelay | minimum delay possible | `100` | *number* | `0`
+maxDelay | maximum delay possible | `5000` | *number* | `1500`
+
+#### Examples
+
+```
+import { FadeInOut, Random } from 'react-animation-components'
+
+const items = ['first', 'second', 'third', 'fourth', 'fifth'];
+
+<Random>
+    {items.map(
+        item => (
+            <FadeInOut>
+                <h1>Each {item} will randomly FadeIn between 0 and 1500ms</h1>
+            </FadeInOut>
+        )
+    )}
+</Random>
+
+<Random minDelay={1000} maxDelay={5000}>
+    {items.map(
+        item => (
+            <FadeInOut>
+                <h1>Each {item} will randomly FadeIn between 1000ms and 5000ms</h1>
+            </FadeInOut>
+        )
+    )}
+</Random>
 ```
