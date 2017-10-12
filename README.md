@@ -140,7 +140,10 @@ const items = ['first', 'second', 'third', 'fourth', 'fifth'];
     {items.map(
         item => (
             <FadeInOut>
-                <h1>Each {item} will increment in segments of 4. First is 0, Second is 100, Third is 200, Fourth is 0, fifth is 100, and so on</h1>
+                <h1>
+                  Each {item} will increment in segments of 4.
+                  First is 0, Second is 100, Third is 200, Fourth is 0, fifth is 100, and so on
+                </h1>
             </FadeInOut>
         )
     )}
