@@ -10,21 +10,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/cjthedizzy/react-animation-components.git"
+        "url":
+            "git+https://github.com/unruffledBeaver/react-animation-components.git"
     },
-    "keywords": [
-        "react",
-        "animations",
-        "react",
-        "transition",
-        "group"
-    ],
+    "keywords": ["react", "animations", "react", "transition", "group"],
     "author": "Chris Johnson",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/cjthedizzy/react-animation-components/issues"
+        "url":
+            "https://github.com/unruffledBeaver/react-animation-components/issues"
     },
-    "homepage": "https://github.com/cjthedizzy/react-animation-components#readme",
+    "homepage":
+        "https://github.com/unruffledBeaver/react-animation-components#readme",
     "peerDependencies": {
         "react": "^16.0.0",
         "react-dom": "^16.0.0",
