@@ -29,6 +29,7 @@ Stagger.propTypes = {
 
 Stagger.defaultProps = {
     delay: 100,
+    chunk: 0,
 };
 
 export default Stagger;

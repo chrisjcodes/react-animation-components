@@ -118,7 +118,7 @@ Uses `TransitionGroup` to stagger `in` on a set of animation components
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
 delay | the amount to separate each stagger by | `1000` | *number* | `100`
-chunk | used to limit the stagger into "chunks". | `5` | *number* | `undefined`
+chunk | used to limit the stagger into "chunks". | `5` | *number* | `0`
 
 #### Examples
 
