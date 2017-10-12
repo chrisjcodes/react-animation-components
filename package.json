@@ -44,13 +44,14 @@
         "cz-conventional-changelog": "^2.0.0",
         "enzyme": "^3.1.0",
         "enzyme-adapter-react-16": "^1.0.1",
+        "ghooks": "^2.0.0",
         "jest": "^21.2.1",
         "react": "^16.0.0",
         "react-dom": "^16.0.0",
         "react-test-renderer": "^16.0.0",
         "react-transition-group": "^2.2.1",
-        "webpack": "^3.6.0",
-        "semantic-release": "^8.0.3"
+        "semantic-release": "^8.0.3",
+        "webpack": "^3.6.0"
     },
     "dependencies": {},
     "jest": {
@@ -60,6 +61,9 @@
     "config": {
         "commitizen": {
             "path": "node_modules/cz-conventional-changelog"
+        },
+        "ghooks": {
+            "pre-commit": "npm run test:single"
         }
     }
 }
