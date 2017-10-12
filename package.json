@@ -1,17 +1,20 @@
 {
     "name": "react-animation-components",
-    "version": "1.0.0",
+    "version": "0.0.0-development",
     "description": "A set of react transition components for basic animations.",
     "main": "lib/react-animation-components.js",
     "scripts": {
+        "commit": "git-cz",
         "build": "NODE_ENV=production webpack -p --progress",
         "test:single": "jest",
-        "test": "jest --watch"
+        "test": "jest --watch",
+        "semantic-release":
+            "semantic-release pre && npm publish && semantic-release post"
     },
     "repository": {
         "type": "git",
         "url":
-            "git+https://github.com/unruffledBeaver/react-animation-components.git"
+            "https://github.com/unruffledBeaver/react-animation-components.git"
     },
     "keywords": ["react", "animations", "react", "transition", "group"],
     "author": "Chris Johnson",
@@ -46,11 +49,17 @@
         "react-dom": "^16.0.0",
         "react-test-renderer": "^16.0.0",
         "react-transition-group": "^2.2.1",
-        "webpack": "^3.6.0"
+        "webpack": "^3.6.0",
+        "semantic-release": "^8.0.3"
     },
     "dependencies": {},
     "jest": {
         "testEnvironment": "node",
         "setupTestFrameworkScriptFile": "./setup-tests.js"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-conventional-changelog"
+        }
     }
 }
