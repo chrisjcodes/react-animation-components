@@ -4,14 +4,11 @@ A set of React Transition Group components (https://github.com/reactjs/react-tra
 
 - [Installation](#installation)
 - [Animation Components](#animation-components)
-  * [Props available on all animation components](#props-available-on-all-animation-components)
   * [FadeInOut](#fadeinout)
   * [TweenTransform](#tweentransform)
-    + [Props](#props)
   * [FadeTransform](#fadetransform)
 - [Group Components](#group-components)
   * [Stagger](#stagger)
-    + [Props](#props-1)
 
 
 ## Installation
