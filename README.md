@@ -41,6 +41,8 @@ style | passes styles to wrapper `div` | `{ display:'flex' }` | *object* | `{}`
 
 Transitions the wrapped element's opacity from `0` to `1`
 
+#### Examples
+
 ```
 import { FadeInOut } from 'react-animation-components'
 
@@ -55,7 +57,7 @@ import { FadeInOut } from 'react-animation-components'
 
 ### TweenTransform
 
-Transitions the wrapped element's from one transform property to another. Any valid `transform` property will work.
+Transitions the wrapped element from one transform property to another. Any valid `transform` property will work.
 
 #### Props
 
@@ -63,6 +65,8 @@ Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
 start | the `entering` and `exited` transform value | `'translateX(100px)'` | *string* | `'none'`
 finish | the `entered` and `exiting` transform value | `'translateX(100px)'` | *string* | `'none'`
+
+#### Examples
 
 ```
 import { TweenTransform } from 'react-animation-components'
@@ -83,6 +87,8 @@ import { TweenTransform } from 'react-animation-components'
 ### FadeTransform
 
 Combines `FadeInOut` and `TweenTransform`. `Transition` props will be passed to both components.
+
+#### Examples
 
 ```
 import { FadeTransform } from 'react-animation-components'
@@ -111,28 +117,30 @@ Uses `TransitionGroup` to stagger in sets of animation components
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
 delay | the amount to separate each stagger by | `1000` | *number* | `100`
-chunk | used to limit the stagger into "chunks" | `5` | *number* | `undefined`
+chunk | used to limit the stagger into "chunks". | `5` | *number* | `undefined`
+
+#### Examples
 
 ```
 import { FadeInOut, Stagger } from 'react-animation-components'
 
-const items = ['first', 'second', 'third', 'fourth'];
+const items = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 <Stagger>
     {items.map(
         item => (
             <FadeInOut>
-                <h1>{item}</h1>
+                <h1>Each {item} will transition in with an incrementally larger delay than the previous</h1>
             </FadeInOut>
         )
     )}
 </Stagger>
 
-<Stagger chunk={3}>
+<Stagger chunk={4}>
     {items.map(
         item => (
             <FadeInOut>
-                <h1>{item}</h1>
+                <h1>Each {item} will increment in segments of 4. First is 0, Second is 100, Third is 200, Fourth is 0, fifth is 100, and so on</h1>
             </FadeInOut>
         )
     )}
