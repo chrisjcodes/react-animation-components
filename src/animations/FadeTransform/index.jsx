@@ -1,6 +1,6 @@
 import React from 'react';
 import { node, string } from 'prop-types';
-import { defaultAnimationProps, getInlineStyles } from '../utilities.js';
+import { defaultAnimationProps, getInlineStyles } from 'utilities';
 
 import FadeInOut from '../FadeInOut';
 import TweenTransform from '../TweenTransform';

@@ -2,7 +2,7 @@ import React from 'react';
 import { bool, node, number, string } from 'prop-types';
 import { Transition } from 'react-transition-group';
 
-import { defaultAnimationProps, getInlineStyles } from '../utilities.js';
+import { defaultAnimationProps, getInlineStyles } from 'utilities';
 
 const statusStyles = {
     entered: {

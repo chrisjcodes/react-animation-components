@@ -2,7 +2,7 @@ import React from 'react';
 import { node, object, string } from 'prop-types';
 import { Transition } from 'react-transition-group';
 
-import { defaultAnimationProps, getInlineStyles } from '../utilities.js';
+import { defaultAnimationProps, getInlineStyles } from 'utilities';
 
 const TweenTransform = ({ children, start, finish, ...props }) => {
     const pos = {

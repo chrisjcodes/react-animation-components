@@ -1,7 +1,8 @@
-import FadeInOut from './FadeInOut';
-import FadeTransform from './FadeTransform';
-import Stagger from './Stagger';
-import Random from './Random';
-import TweenTransform from './TweenTransform';
+import FadeInOut from 'animations/FadeInOut';
+import FadeTransform from 'animations/FadeTransform';
+import TweenTransform from 'animations/TweenTransform';
+
+import Stagger from 'groups/Stagger';
+import Random from 'groups/Random';
 
 module.exports = { FadeInOut, FadeTransform, Stagger, TweenTransform, Random };
