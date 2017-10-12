@@ -17,6 +17,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx|es6)?$/,
+                exclude: /\.test.js/,
                 loader: 'babel-loader',
             },
         ],
