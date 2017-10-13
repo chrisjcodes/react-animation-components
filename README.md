@@ -111,7 +111,7 @@ import { FadeTransform } from 'react-animation-components'
 
 ### Stagger
 
-Uses `TransitionGroup` to stagger `in` on a set of animation components
+Uses `TransitionGroup` to stagger `delay` on a set of animation components
 
 #### Props
 
@@ -152,7 +152,7 @@ const items = ['first', 'second', 'third', 'fourth', 'fifth'];
 ```
 ### Random
 
-Uses `TransitionGroup` to randomize `in` on a set of animation components
+Uses `TransitionGroup` to randomize `delay` on a set of animation components
 
 #### Props
 
