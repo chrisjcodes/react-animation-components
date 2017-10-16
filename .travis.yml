@@ -16,6 +16,7 @@ after_success:
 before_deploy:
   - npm run build-storybook && ls
 deploy:
+  skip_cleanup: true
   provider: surge
   project: ./storybook-static
   domain: react-animation-components.surge.sh 
