@@ -17,7 +17,7 @@ after_success:
 deploy:
   provider: surge
   project: ./storybook-static/
-  domain: react-animation-component.surge.sh 
+  domain: react-animation-components.surge.sh 
 branches:
   only: 
     - master
