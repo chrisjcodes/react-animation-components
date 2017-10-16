@@ -23,6 +23,7 @@ FadeTransform.propTypes = {
 
 FadeTransform.defaultProps = {
     ...defaultAnimationProps,
+    timeout: 0,
 };
 
 export default FadeTransform;
