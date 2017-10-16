@@ -8,6 +8,6 @@ export const getInlineStyles = ({ style = {}, ...props } = {}) => ({
 export const defaultAnimationProps = {
     appear: true,
     duration: '500ms',
-    timeout: 0,
-    timingFn: 'linear',
+    timeout: 500,
+    timingFn: 'ease',
 };
