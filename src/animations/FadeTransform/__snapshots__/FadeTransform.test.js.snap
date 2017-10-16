@@ -9,7 +9,7 @@ exports[`FadeTranform can accept custom styles 1`] = `
       "transitionDelay": null,
       "transitionDuration": "500ms",
       "transitionProperty": "opacity",
-      "transitionTimingFunction": "linear",
+      "transitionTimingFunction": "ease",
     }
   }
 >
@@ -21,7 +21,7 @@ exports[`FadeTranform can accept custom styles 1`] = `
         "transitionDelay": null,
         "transitionDuration": "500ms",
         "transitionProperty": "transform",
-        "transitionTimingFunction": "linear",
+        "transitionTimingFunction": "ease",
       }
     }
   />
@@ -36,7 +36,7 @@ exports[`FadeTranform renders 1`] = `
       "transitionDelay": null,
       "transitionDuration": "500ms",
       "transitionProperty": "opacity",
-      "transitionTimingFunction": "linear",
+      "transitionTimingFunction": "ease",
     }
   }
 >
@@ -47,7 +47,7 @@ exports[`FadeTranform renders 1`] = `
         "transitionDelay": null,
         "transitionDuration": "500ms",
         "transitionProperty": "transform",
-        "transitionTimingFunction": "linear",
+        "transitionTimingFunction": "ease",
       }
     }
   />
@@ -62,7 +62,7 @@ exports[`FadeTranform sets finish 1`] = `
       "transitionDelay": null,
       "transitionDuration": "500ms",
       "transitionProperty": "opacity",
-      "transitionTimingFunction": "linear",
+      "transitionTimingFunction": "ease",
     }
   }
 >
@@ -73,7 +73,7 @@ exports[`FadeTranform sets finish 1`] = `
         "transitionDelay": null,
         "transitionDuration": "500ms",
         "transitionProperty": "transform",
-        "transitionTimingFunction": "linear",
+        "transitionTimingFunction": "ease",
       }
     }
   />
@@ -88,7 +88,7 @@ exports[`FadeTranform sets start 1`] = `
       "transitionDelay": null,
       "transitionDuration": "500ms",
       "transitionProperty": "opacity",
-      "transitionTimingFunction": "linear",
+      "transitionTimingFunction": "ease",
     }
   }
 >
@@ -99,7 +99,7 @@ exports[`FadeTranform sets start 1`] = `
         "transitionDelay": null,
         "transitionDuration": "500ms",
         "transitionProperty": "transform",
-        "transitionTimingFunction": "linear",
+        "transitionTimingFunction": "ease",
       }
     }
   />
@@ -114,7 +114,7 @@ exports[`FadeTranform sets transitionDelay with delay prop 1`] = `
       "transitionDelay": "1s",
       "transitionDuration": "500ms",
       "transitionProperty": "opacity",
-      "transitionTimingFunction": "linear",
+      "transitionTimingFunction": "ease",
     }
   }
 >
@@ -125,7 +125,7 @@ exports[`FadeTranform sets transitionDelay with delay prop 1`] = `
         "transitionDelay": "1s",
         "transitionDuration": "500ms",
         "transitionProperty": "transform",
-        "transitionTimingFunction": "linear",
+        "transitionTimingFunction": "ease",
       }
     }
   />
@@ -140,7 +140,7 @@ exports[`FadeTranform sets transitionDuration with duration prop 1`] = `
       "transitionDelay": null,
       "transitionDuration": "1s",
       "transitionProperty": "opacity",
-      "transitionTimingFunction": "linear",
+      "transitionTimingFunction": "ease",
     }
   }
 >
@@ -151,7 +151,7 @@ exports[`FadeTranform sets transitionDuration with duration prop 1`] = `
         "transitionDelay": null,
         "transitionDuration": "1s",
         "transitionProperty": "transform",
-        "transitionTimingFunction": "linear",
+        "transitionTimingFunction": "ease",
       }
     }
   />
