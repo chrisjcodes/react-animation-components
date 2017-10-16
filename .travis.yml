@@ -11,12 +11,13 @@ before_script:
   - npm prune
 script:
   - npm run test:single
-  - npm run build-storybook
 after_success:
   - npm run semantic-release
+before_deploy:
+  - npm run build-storybook && ls
 deploy:
   provider: surge
-  project: ./storybook-static/
+  project: ./storybook-static
   domain: react-animation-components.surge.sh 
 branches:
   only: 
