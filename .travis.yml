@@ -11,8 +11,13 @@ before_script:
   - npm prune
 script:
   - npm run test:single
+  - npm run build-storybook
 after_success:
   - npm run semantic-release
+deploy:
+  provider: surge
+  project: ./storybook-static/
+  domain: example.surge.sh 
 branches:
   only: 
     - master
