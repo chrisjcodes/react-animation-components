@@ -12,7 +12,7 @@ const TweenTransform = ({ children, enter, exit, ...props }) => {
     const pos = {
         entering: exit,
         entered: enter,
-        exiting: enter,
+        exiting: exit,
         exited: exit,
     };
 

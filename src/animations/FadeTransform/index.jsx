@@ -18,7 +18,7 @@ const statusStyles = {
         opacity: 0,
     },
     exiting: {
-        opacity: 1,
+        opacity: 0,
     },
 };
 
@@ -26,7 +26,7 @@ const FadeTransform = ({ children, enter, exit, ...props }) => {
     const pos = {
         entering: exit,
         entered: enter,
-        exiting: enter,
+        exiting: exit,
         exited: exit,
     };
 
