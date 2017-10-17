@@ -6,7 +6,7 @@ exports[`TweenTransform can accept custom styles 1`] = `
     Object {
       "background": "black",
       "transform": "none",
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
@@ -20,7 +20,7 @@ exports[`TweenTransform renders 1`] = `
   style={
     Object {
       "transform": "none",
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
@@ -34,7 +34,7 @@ exports[`TweenTransform sets finish 1`] = `
   style={
     Object {
       "transform": "none",
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
@@ -48,7 +48,7 @@ exports[`TweenTransform sets start 1`] = `
   style={
     Object {
       "transform": "none",
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
@@ -76,7 +76,7 @@ exports[`TweenTransform sets transitionDuration with duration prop 1`] = `
   style={
     Object {
       "transform": "none",
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "1000ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
@@ -90,7 +90,7 @@ exports[`TweenTransform sets transitionTimingFunction with timingFn prop 1`] = `
   style={
     Object {
       "transform": "none",
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease-in-out",

@@ -6,7 +6,7 @@ exports[`FadeInOut can accept custom styles 1`] = `
     Object {
       "background": "black",
       "opacity": 0,
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "500ms",
       "transitionProperty": "opacity",
       "transitionTimingFunction": "ease",
@@ -20,7 +20,7 @@ exports[`FadeInOut renders 1`] = `
   style={
     Object {
       "opacity": 0,
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "500ms",
       "transitionProperty": "opacity",
       "transitionTimingFunction": "ease",
@@ -48,7 +48,7 @@ exports[`FadeInOut sets transitionDuration with duration prop 1`] = `
   style={
     Object {
       "opacity": 0,
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "1000ms",
       "transitionProperty": "opacity",
       "transitionTimingFunction": "ease",
@@ -62,7 +62,7 @@ exports[`FadeInOut sets transitionTimingFunction with timingFn prop 1`] = `
   style={
     Object {
       "opacity": 0,
-      "transitionDelay": null,
+      "transitionDelay": "0ms",
       "transitionDuration": "500ms",
       "transitionProperty": "opacity",
       "transitionTimingFunction": "ease-in-out",
