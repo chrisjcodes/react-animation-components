@@ -5,181 +5,103 @@ exports[`FadeTranform can accept custom styles 1`] = `
   style={
     Object {
       "background": "black",
-      "transform": "none",
+      "opacity": 0,
+      "transform": undefined,
       "transitionDelay": "0ms",
       "transitionDuration": "500ms",
-      "transitionProperty": "transform",
+      "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
     }
   }
->
-  <div
-    style={
-      Object {
-        "background": "black",
-        "opacity": 0,
-        "transitionDelay": "0ms",
-        "transitionDuration": "500ms",
-        "transitionProperty": "opacity",
-        "transitionTimingFunction": "ease",
-      }
-    }
-  />
-</div>
+/>
 `;
 
 exports[`FadeTranform renders 1`] = `
 <div
   style={
     Object {
-      "transform": "none",
+      "opacity": 0,
+      "transform": undefined,
       "transitionDelay": "0ms",
       "transitionDuration": "500ms",
-      "transitionProperty": "transform",
+      "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
     }
   }
->
-  <div
-    style={
-      Object {
-        "opacity": 0,
-        "transitionDelay": "0ms",
-        "transitionDuration": "500ms",
-        "transitionProperty": "opacity",
-        "transitionTimingFunction": "ease",
-      }
-    }
-  />
-</div>
+/>
 `;
 
 exports[`FadeTranform sets finish 1`] = `
 <div
   style={
     Object {
-      "transform": "none",
+      "opacity": 0,
+      "transform": undefined,
       "transitionDelay": "0ms",
       "transitionDuration": "500ms",
-      "transitionProperty": "transform",
+      "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
     }
   }
->
-  <div
-    style={
-      Object {
-        "opacity": 0,
-        "transitionDelay": "0ms",
-        "transitionDuration": "500ms",
-        "transitionProperty": "opacity",
-        "transitionTimingFunction": "ease",
-      }
-    }
-  />
-</div>
+/>
 `;
 
 exports[`FadeTranform sets start 1`] = `
 <div
   style={
     Object {
-      "transform": "none",
+      "opacity": 0,
+      "transform": undefined,
       "transitionDelay": "0ms",
       "transitionDuration": "500ms",
-      "transitionProperty": "transform",
+      "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
     }
   }
->
-  <div
-    style={
-      Object {
-        "opacity": 0,
-        "transitionDelay": "0ms",
-        "transitionDuration": "500ms",
-        "transitionProperty": "opacity",
-        "transitionTimingFunction": "ease",
-      }
-    }
-  />
-</div>
+/>
 `;
 
 exports[`FadeTranform sets transitionDelay with delay prop 1`] = `
 <div
   style={
     Object {
-      "transform": "none",
+      "opacity": 0,
+      "transform": undefined,
       "transitionDelay": "1000ms",
       "transitionDuration": "500ms",
-      "transitionProperty": "transform",
+      "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
     }
   }
->
-  <div
-    style={
-      Object {
-        "opacity": 0,
-        "transitionDelay": "1000ms",
-        "transitionDuration": "500ms",
-        "transitionProperty": "opacity",
-        "transitionTimingFunction": "ease",
-      }
-    }
-  />
-</div>
+/>
 `;
 
 exports[`FadeTranform sets transitionDuration with duration prop 1`] = `
 <div
   style={
     Object {
-      "transform": "none",
+      "opacity": 0,
+      "transform": undefined,
       "transitionDelay": "0ms",
       "transitionDuration": "1000ms",
-      "transitionProperty": "transform",
+      "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
     }
   }
->
-  <div
-    style={
-      Object {
-        "opacity": 0,
-        "transitionDelay": "0ms",
-        "transitionDuration": "1000ms",
-        "transitionProperty": "opacity",
-        "transitionTimingFunction": "ease",
-      }
-    }
-  />
-</div>
+/>
 `;
 
 exports[`FadeTranform sets transitionTimingFunction with timingFn prop 1`] = `
 <div
   style={
     Object {
-      "transform": "none",
+      "opacity": 0,
+      "transform": undefined,
       "transitionDelay": "0ms",
       "transitionDuration": "500ms",
-      "transitionProperty": "transform",
+      "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease-in-out",
     }
   }
->
-  <div
-    style={
-      Object {
-        "opacity": 0,
-        "transitionDelay": "0ms",
-        "transitionDuration": "500ms",
-        "transitionProperty": "opacity",
-        "transitionTimingFunction": "ease-in-out",
-      }
-    }
-  />
-</div>
+/>
 `;
