@@ -31,13 +31,13 @@ Make sure you also have installed the following peer dependencies:
 
 ### Props available on all animation components
 
-The following are available on any animation component as well as **any valid `Transition` props**. Transitions are set to `appear` and `timeout={500}` by default but can be overwritten.
+The following are available on any animation component as well as **any valid `Transition` props**. Transitions are set to `appear` and their `timeout` is calculated by combining the `delay` and `duration` by default but can be overwritten. When using `unmountOnExit` / `mountOnEnter` you may have to pass a `timeout` to prevent transition phases from moving too quickly and snapping elements off and on the DOM.
 
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
-delay | sets the animations `transitionDelay` | `'500ms'` | *string* | `'0ms'`
-duration | sets the animations `transitionDuration` | `'1s'` | *string* | `'500ms'`
-timingFn | sets the animations `transitionTimingFunction` | `'ease-in-out'` | *string* | `'linear'`
+delay | sets the animations `transitionDelay` | `500` | *number* | `0`
+duration | sets the animations `transitionDuration` | `1000` | *number* | `500`
+timingFn | sets the animations `transitionTimingFunction` | `'ease-in-out'` | *string* | `'ease'`
 style | passes styles to wrapper `div` | `{ display:'flex' }` | *object* | `{}`
 
 ### FadeInOut
