@@ -66,8 +66,8 @@ Transitions the wrapped element from one transform property to another. Any vali
 
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
-enter | the `entering` and `entered` transform value | `'translateX(100px)'` | *string* | `'none'`
-exit | the `exiting` and `exited` transform value | `'translateX(100px)'` | *string* | `'none'`
+enter | the `etnered` and `exiting` transform value | `'translateX(100px)'` | *string* | `'none'`
+exit | the `entering` and `exited` transform value | `'translateX(100px)'` | *string* | `'none'`
 
 #### Examples
 
