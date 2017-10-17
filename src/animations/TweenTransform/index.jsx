@@ -8,11 +8,18 @@ import {
     getTimeoutValue,
 } from 'utilities';
 
-const TweenTransform = ({ children, enter, exit, ...props }) => {
+const TweenTransform = ({
+    children,
+    enter,
+    exit,
+    entering,
+    exiting,
+    ...props
+}) => {
     const pos = {
-        entering: enter,
+        entering: entering || enter,
         entered: enter,
-        exiting: exit,
+        exiting: exiting || exit,
         exited: exit,
     };
 

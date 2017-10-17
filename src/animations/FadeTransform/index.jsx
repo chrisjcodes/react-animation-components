@@ -1,29 +1,57 @@
 import React from 'react';
 import { node, string } from 'prop-types';
+import { Transition } from 'react-transition-group';
 import {
     defaultAnimationProps,
     getInlineStyles,
     getTimeoutValue,
 } from 'utilities';
 
-import FadeInOut from '../FadeInOut';
-import TweenTransform from '../TweenTransform';
+const statusStyles = {
+    entered: {
+        opacity: 1,
+    },
+    entering: {
+        opacity: 1,
+    },
+    exited: {
+        opacity: 0,
+    },
+    exiting: {
+        opacity: 0,
+    },
+};
 
-const FadeTransform = ({ children, ...props }) => {
+const FadeTransform = ({
+    children,
+    enter,
+    exit,
+    exiting,
+    entering,
+    ...props
+}) => {
+    const pos = {
+        entering: entering || enter,
+        entered: enter,
+        exiting: exiting || exit,
+        exited: exit,
+    };
+
     return (
-        <TweenTransform
-            timeout={getTimeoutValue(props)}
-            {...props}
-            style={getInlineStyles(props)}
-        >
-            <FadeInOut
-                timeout={getTimeoutValue(props)}
-                {...props}
-                style={getInlineStyles(props)}
-            >
-                {children}
-            </FadeInOut>
-        </TweenTransform>
+        <Transition timeout={getTimeoutValue(props)} {...props}>
+            {status => (
+                <div
+                    style={{
+                        ...getInlineStyles(props),
+                        ...statusStyles[status],
+                        transform: pos[status],
+                        transitionProperty: 'transform, opacity',
+                    }}
+                >
+                    {children}
+                </div>
+            )}
+        </Transition>
     );
 };
 
