@@ -66,23 +66,23 @@ Transitions the wrapped element from one transform property to another. Any vali
 
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
-start | the `entering` and `exited` transform value | `'translateX(100px)'` | *string* | `'none'`
-finish | the `entered` and `exiting` transform value | `'translateX(100px)'` | *string* | `'none'`
+enter | the `entering` and `entered` transform value | `'translateX(100px)'` | *string* | `'none'`
+exit | the `exiting` and `exited` transform value | `'translateX(100px)'` | *string* | `'none'`
 
 #### Examples
 
 ```
 import { TweenTransform } from 'react-animation-components'
 
-<TweenTranform start="translateX(100px)" in>
+<TweenTranform enter="translateX(100px)" in>
   <h1>I'm transitioning from 100px to the left back to my initial position</h1>
 </TweenTranform>
 
-<TweenTranform start="translateX(100px)" finish="translateX(-100px)" in>
+<TweenTranform enter="translateX(100px)" exit="translateX(-100px)" in>
   <h1>I'm transitioning from 100px to the left to 100px right of my initial position</h1>
 </TweenTranform>
 
-<TweenTranform start="rotate(90deg)" in>
+<TweenTranform enter="rotate(90deg)" in>
   <h1>I'm transitioning from being rotate 90 deg back to my initial rotation</h1>
 </TweenTranform>
 ```
@@ -96,15 +96,15 @@ Combines `FadeInOut` and `TweenTransform`. `Transition` props will be passed to 
 ```
 import { FadeTransform } from 'react-animation-components'
 
-<FadeTranform start="translateX(100px)" in>
+<FadeTranform enter="translateX(100px)" in>
   <h1>I'm transitioning from 100px to the left back to my initial position and fading in</h1>
 </FadeTranform>
 
-<FadeTranform start="translateX(100px)" finish="translateX(-100px)" in>
+<FadeTranform enter="translateX(100px)" exit="translateX(-100px)" in>
   <h1>I'm transitioning from 100px to the left to 100px right of my initial position and fading in</h1>
 </FadeTranform>
 
-<FadeTranform start="rotate(90deg)" in>
+<FadeTranform enter="rotate(90deg)" in>
   <h1>I'm transitioning from being rotate 90 deg back to my initial rotation and fading in</h1>
 </FadeTranform>
 ```
