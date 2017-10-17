@@ -2,6 +2,8 @@
 
 A set of React Transition Group components (https://github.com/reactjs/react-transition-group) for basic animations.
 
+[Checkout the Storybook!](http://react-animation-components.surge.sh/)
+
 - [Installation](#installation)
 - [Animation Components](#animation-components)
   * [FadeInOut](#fadeinout)
