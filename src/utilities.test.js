@@ -1,14 +1,18 @@
-import { getInlineStyles, getTimeoutValue } from './utilities.js';
+import {
+    getInlineStyles,
+    getTimeoutValue,
+    defaultAnimationProps,
+} from './utilities.js';
 
 describe('Utilities', () => {
     describe('getInlineStyles', () => {
         test('returns an object', () => {
-            const actual = getInlineStyles();
+            const actual = getInlineStyles(defaultAnimationProps);
 
             const expected = expect.objectContaining({
-                transitionDelay: null,
-                transitionDuration: null,
-                transitionTimingFunction: null,
+                transitionDelay: '0ms',
+                transitionDuration: '500ms',
+                transitionTimingFunction: 'ease',
             });
 
             expect(actual).toEqual(expected);

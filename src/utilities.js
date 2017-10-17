@@ -2,9 +2,9 @@ export const getInlineStyles = (
     { style = {}, delay, duration, timingFn, ...props } = {}
 ) => ({
     ...style,
-    transitionDelay: delay ? `${delay}ms` : null,
-    transitionDuration: duration ? `${duration}ms` : null,
-    transitionTimingFunction: timingFn || null,
+    transitionDelay: `${delay}ms`,
+    transitionDuration: `${duration}ms`,
+    transitionTimingFunction: timingFn,
 });
 
 export const getTimeoutValue = ({ delay = 0, duration = 0 } = {}) =>
