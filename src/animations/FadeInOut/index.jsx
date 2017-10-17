@@ -2,14 +2,18 @@ import React from 'react';
 import { bool, node, number, string } from 'prop-types';
 import { Transition } from 'react-transition-group';
 
-import { defaultAnimationProps, getInlineStyles } from 'utilities';
+import {
+    defaultAnimationProps,
+    getInlineStyles,
+    getTimeoutValue,
+} from 'utilities';
 
 const statusStyles = {
     entered: {
         opacity: 1,
     },
     entering: {
-        opacity: 0,
+        opacity: 1,
     },
     exited: {
         opacity: 0,
@@ -21,7 +25,7 @@ const statusStyles = {
 
 const FadeInOut = props => {
     return (
-        <Transition {...props}>
+        <Transition timeout={getTimeoutValue(props)} {...props}>
             {status => (
                 <div
                     style={{
@@ -40,9 +44,8 @@ const FadeInOut = props => {
 FadeInOut.propTypes = {
     appear: bool,
     children: node.isRequired,
-    delay: string,
-    duration: string,
-    timeout: number,
+    delay: number,
+    duration: number,
     timingFn: string,
 };
 

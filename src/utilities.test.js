@@ -1,4 +1,4 @@
-import { getInlineStyles } from './utilities.js';
+import { getInlineStyles, getTimeoutValue } from './utilities.js';
 
 describe('Utilities', () => {
     describe('getInlineStyles', () => {
@@ -16,16 +16,16 @@ describe('Utilities', () => {
 
         test('sets transition properties with props object', () => {
             const props = {
-                delay: '1s',
-                duration: '1s',
+                delay: 1000,
+                duration: 1000,
                 timingFn: 'ease-in-out',
             };
 
             const actual = getInlineStyles(props);
 
             const expected = expect.objectContaining({
-                transitionDelay: '1s',
-                transitionDuration: '1s',
+                transitionDelay: '1000ms',
+                transitionDuration: '1000ms',
                 transitionTimingFunction: 'ease-in-out',
             });
 
@@ -34,8 +34,8 @@ describe('Utilities', () => {
 
         test('does not overwrite transition styles', () => {
             const props = {
-                delay: '1s',
-                duration: '1s',
+                delay: 1000,
+                duration: 1000,
                 timingFn: 'ease-in-out',
                 style: {
                     transitionDelay: '2s',
@@ -47,11 +47,24 @@ describe('Utilities', () => {
             const actual = getInlineStyles(props);
 
             const expected = expect.objectContaining({
-                transitionDelay: '1s',
-                transitionDuration: '1s',
+                transitionDelay: '1000ms',
+                transitionDuration: '1000ms',
                 transitionTimingFunction: 'ease-in-out',
             });
 
+            expect(actual).toEqual(expected);
+        });
+    });
+
+    describe('getTimeoutValue', () => {
+        test('Returns value when delay and/or duration are undefined', () => {
+            const props = {
+                delay: undefined,
+                duration: undefined,
+            };
+
+            const actual = getTimeoutValue(props);
+            const expected = 0;
             expect(actual).toEqual(expected);
         });
     });

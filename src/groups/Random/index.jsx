@@ -12,7 +12,7 @@ const Random = ({ children, minDelay, maxDelay, ...props }) => {
         <TransitionGroup appear {...props}>
             {React.Children.map(children, (child, i) =>
                 React.cloneElement(child, {
-                    delay: `${getRandomDelay(minDelay, maxDelay)}ms`,
+                    delay: getRandomDelay(minDelay, maxDelay),
                 })
             )}
         </TransitionGroup>

@@ -2,18 +2,22 @@ import React from 'react';
 import { node, object, string } from 'prop-types';
 import { Transition } from 'react-transition-group';
 
-import { defaultAnimationProps, getInlineStyles } from 'utilities';
+import {
+    defaultAnimationProps,
+    getInlineStyles,
+    getTimeoutValue,
+} from 'utilities';
 
-const TweenTransform = ({ children, start, finish, ...props }) => {
+const TweenTransform = ({ children, enter, exit, ...props }) => {
     const pos = {
-        entering: start,
-        entered: finish,
-        exiting: finish,
-        exited: start,
+        entering: enter,
+        entered: enter,
+        exiting: exit,
+        exited: exit,
     };
 
     return (
-        <Transition {...props}>
+        <Transition timeout={getTimeoutValue(props)} {...props}>
             {status => (
                 <div
                     style={{
@@ -30,16 +34,20 @@ const TweenTransform = ({ children, start, finish, ...props }) => {
 };
 
 TweenTransform.propTypes = {
+    appear: bool,
     children: node.isRequired,
-    start: string,
+    delay: number,
+    duration: number,
+    exit: string,
+    enter: string,
     style: object,
-    finish: string,
+    timingFn: string,
 };
 
 TweenTransform.defaultProps = {
     ...defaultAnimationProps,
-    start: 'none',
-    finish: 'none',
+    enter: 'none',
+    exit: 'none',
 };
 
 export default TweenTransform;

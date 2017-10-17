@@ -1,13 +1,18 @@
-export const getInlineStyles = ({ style = {}, ...props } = {}) => ({
+export const getInlineStyles = (
+    { style = {}, delay, duration, timingFn, ...props } = {}
+) => ({
     ...style,
-    transitionDelay: props.delay || null,
-    transitionDuration: props.duration || null,
-    transitionTimingFunction: props.timingFn || null,
+    transitionDelay: delay ? `${delay}ms` : null,
+    transitionDuration: duration ? `${duration}ms` : null,
+    transitionTimingFunction: timingFn || null,
 });
+
+export const getTimeoutValue = ({ delay = 0, duration = 0 } = {}) =>
+    delay + duration;
 
 export const defaultAnimationProps = {
     appear: true,
-    duration: '500ms',
-    timeout: 500,
+    delay: 0,
+    duration: 500,
     timingFn: 'ease',
 };

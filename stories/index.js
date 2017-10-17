@@ -16,10 +16,9 @@ storiesOf('Animations/FadeInOut', module)
     .add('default', () => (
         <FadeInOut
             in={boolean('in', true)}
-            delay={text('delay', '0')}
-            duration={text('duration', '500ms')}
+            delay={number('delay', 0)}
+            duration={number('duration', 500)}
             timingFn={text('timingFn', 'ease')}
-            timeout={number('timeout', 500)}
             unmountOnExit={boolean('unmountOnExit', false)}
             mountOnEnter={boolean('mountOnEnter', false)}
         >
@@ -32,11 +31,11 @@ storiesOf('Animations/TweenTransform', module)
     .add('default', () => (
         <TweenTransform
             in={boolean('in', true)}
-            delay={text('delay', '0')}
-            duration={text('duration', '500ms')}
+            delay={number('delay', 0)}
+            duration={number('duration', 500)}
             timingFn={text('timingFn', 'ease')}
-            start={text('start', 'translateY(50vh)')}
-            finish={text('finish', 'none')}
+            enter={text('enter', 'translateY(50vh)')}
+            exit={text('exit', 'none')}
         >
             <h1>Example</h1>
         </TweenTransform>
@@ -47,11 +46,11 @@ storiesOf('Animations/FadeTransform', module)
     .add('default', () => (
         <FadeTransform
             in={boolean('in', true)}
-            delay={text('delay', '0')}
-            duration={text('duration', '500ms')}
+            delay={number('delay', 0)}
+            duration={number('duration', 500)}
             timingFn={text('timingFn', 'ease')}
-            start={text('start', 'translateY(50vh)')}
-            finish={text('finish', 'none')}
+            enter={text('enter', 'none')}
+            exit={text('exit', 'translateY(50vh)')}
             unmountOnExit={boolean('unmountOnExit', false)}
             mountOnEnter={boolean('mountOnEnter', false)}
         >

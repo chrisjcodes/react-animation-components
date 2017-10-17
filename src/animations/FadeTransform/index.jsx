@@ -1,29 +1,44 @@
 import React from 'react';
 import { node, string } from 'prop-types';
-import { defaultAnimationProps, getInlineStyles } from 'utilities';
+import {
+    defaultAnimationProps,
+    getInlineStyles,
+    getTimeoutValue,
+} from 'utilities';
 
 import FadeInOut from '../FadeInOut';
 import TweenTransform from '../TweenTransform';
 
 const FadeTransform = ({ children, ...props }) => {
     return (
-        <FadeInOut {...props} style={getInlineStyles(props)}>
-            <TweenTransform {...props} style={getInlineStyles(props)}>
+        <TweenTransform
+            timeout={getTimeoutValue(props)}
+            {...props}
+            style={getInlineStyles(props)}
+        >
+            <FadeInOut
+                timeout={getTimeoutValue(props)}
+                {...props}
+                style={getInlineStyles(props)}
+            >
                 {children}
-            </TweenTransform>
-        </FadeInOut>
+            </FadeInOut>
+        </TweenTransform>
     );
 };
 
 FadeTransform.propTypes = {
+    appear: bool,
     children: node.isRequired,
-    finish: string,
-    start: string,
+    delay: number,
+    duration: number,
+    exit: string,
+    enter: string,
+    timingFn: string,
 };
 
 FadeTransform.defaultProps = {
     ...defaultAnimationProps,
-    timeout: 0,
 };
 
 export default FadeTransform;

@@ -18,13 +18,13 @@ describe('FadeTranform', () => {
     });
 
     test('sets transitionDelay with delay prop', () => {
-        const component = renderer.create(<FadeTranform delay="1s" />);
+        const component = renderer.create(<FadeTranform delay={1000} />);
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
 
     test('sets transitionDuration with duration prop', () => {
-        const component = renderer.create(<FadeTranform duration="1s" />);
+        const component = renderer.create(<FadeTranform duration={1000} />);
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });

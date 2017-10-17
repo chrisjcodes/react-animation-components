@@ -14,7 +14,7 @@ const Stagger = ({ children, ...props }) => {
         <TransitionGroup appear {...props}>
             {React.Children.map(children, (child, i) =>
                 React.cloneElement(child, {
-                    delay: `${getStaggerDelay(i, props)}ms`,
+                    delay: getStaggerDelay(i, props),
                 })
             )}
         </TransitionGroup>

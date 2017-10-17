@@ -47,7 +47,7 @@ exports[`TweenTransform sets start 1`] = `
 <div
   style={
     Object {
-      "transform": "translateX(10em)",
+      "transform": "none",
       "transitionDelay": null,
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
@@ -62,7 +62,7 @@ exports[`TweenTransform sets transitionDelay with delay prop 1`] = `
   style={
     Object {
       "transform": "none",
-      "transitionDelay": "1s",
+      "transitionDelay": "1000ms",
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
@@ -77,7 +77,7 @@ exports[`TweenTransform sets transitionDuration with duration prop 1`] = `
     Object {
       "transform": "none",
       "transitionDelay": null,
-      "transitionDuration": "1s",
+      "transitionDuration": "1000ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
     }
