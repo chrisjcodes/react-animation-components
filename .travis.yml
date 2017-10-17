@@ -19,7 +19,9 @@ deploy:
   skip_cleanup: true
   provider: surge
   project: ./storybook-static
-  domain: react-animation-components.surge.sh 
+  domain: react-animation-components.surge.sh
+  on:
+    tags: true 
 branches:
   only: 
     - master
