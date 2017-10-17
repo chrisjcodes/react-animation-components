@@ -34,7 +34,7 @@ exports[`FadeInOut sets transitionDelay with delay prop 1`] = `
   style={
     Object {
       "opacity": 0,
-      "transitionDelay": "1s",
+      "transitionDelay": "1000ms",
       "transitionDuration": "500ms",
       "transitionProperty": "opacity",
       "transitionTimingFunction": "ease",
@@ -49,7 +49,7 @@ exports[`FadeInOut sets transitionDuration with duration prop 1`] = `
     Object {
       "opacity": 0,
       "transitionDelay": null,
-      "transitionDuration": "1s",
+      "transitionDuration": "1000ms",
       "transitionProperty": "opacity",
       "transitionTimingFunction": "ease",
     }
