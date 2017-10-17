@@ -20,8 +20,6 @@ deploy:
   provider: surge
   project: ./storybook-static
   domain: react-animation-components.surge.sh
-  on:
-    tags: true 
 branches:
   only: 
     - master
