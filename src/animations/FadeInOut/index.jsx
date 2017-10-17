@@ -19,7 +19,7 @@ const statusStyles = {
         opacity: 0,
     },
     exiting: {
-        opacity: 1,
+        opacity: 0,
     },
 };
 
