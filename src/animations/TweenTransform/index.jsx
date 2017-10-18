@@ -24,6 +24,7 @@ const TweenTransform = ({ children, enter, exit, ...props }) => {
                         ...getInlineStyles(props),
                         transform: pos[status],
                         transitionProperty: 'transform',
+                        willChange: 'transform',
                     }}
                 >
                     {children}

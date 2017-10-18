@@ -39,6 +39,7 @@ const FadeTransform = ({ children, enter, exit, ...props }) => {
                         ...statusStyles[status],
                         transform: pos[status],
                         transitionProperty: 'transform, opacity',
+                        willChange: 'transform, opacity',
                     }}
                 >
                     {children}

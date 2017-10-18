@@ -32,6 +32,7 @@ const FadeInOut = props => {
                         ...getInlineStyles(props),
                         ...statusStyles[status],
                         transitionProperty: 'opacity',
+                        willChange: 'opacity',
                     }}
                 >
                     {props.children}
