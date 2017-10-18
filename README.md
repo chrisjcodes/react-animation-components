@@ -76,38 +76,44 @@ exit | The transform value when `in` is `false` | `'translateX(100px)'` | *strin
 import { TweenTransform } from 'react-animation-components'
 
 <TweenTranform enter="translateX(100px)" in>
-  <h1>I'm transitioning from 100px to the left back to my initial position</h1>
+  <h1>I'm transitioning from my initial position to 100px right when `in` is `true`</h1>
 </TweenTranform>
 
 <TweenTranform enter="translateX(100px)" exit="translateX(-100px)" in>
-  <h1>I'm transitioning from 100px to the left to 100px right of my initial position</h1>
+  <h1>
+    I'm 100px to the left of my initial position and
+    I transition 100px right of my initial when `in` is `true`
+  </h1>
 </TweenTranform>
 
 <TweenTranform enter="rotate(90deg)" in>
-  <h1>I'm transitioning from being rotate 90 deg back to my initial rotation</h1>
+  <h1>I transition from initial positon to rotate 90deg when `in` is `true`</h1>
 </TweenTranform>
 ```
 
 ### FadeTransform
 
-Combines `FadeInOut` and `TweenTransform`. `Transition` props will be passed to both components.
+Combines `FadeInOut` and `TweenTransform` and accepts all the props of both.
 
 #### Examples
 
 ```
 import { FadeTransform } from 'react-animation-components'
 
-<FadeTranform enter="translateX(100px)" in>
-  <h1>I'm transitioning from 100px to the left back to my initial position and fading in</h1>
-</FadeTranform>
+<FadeTransform enter="translateX(100px)" in>
+  <h1>I'm transitioning from my initial position to 100px right when `in` is `true`</h1>
+</FadeTransform>
 
-<FadeTranform enter="translateX(100px)" exit="translateX(-100px)" in>
-  <h1>I'm transitioning from 100px to the left to 100px right of my initial position and fading in</h1>
-</FadeTranform>
+<FadeTransform enter="translateX(100px)" exit="translateX(-100px)" in>
+  <h1>
+    I'm 100px to the left of my initial position and
+    I transition 100px right of my initial when `in` is `true`
+  </h1>
+</FadeTransform>
 
-<FadeTranform enter="rotate(90deg)" in>
-  <h1>I'm transitioning from being rotate 90 deg back to my initial rotation and fading in</h1>
-</FadeTranform>
+<FadeTransform enter="rotate(90deg)" in>
+  <h1>I transition from initial positon to rotate 90deg when `in` is `true`</h1>
+</FadeTransform>
 ```
 
 ## Wrapper Components
