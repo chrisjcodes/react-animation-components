@@ -1,6 +1,6 @@
 # react-animation-components
 
-A set of React Transition Group components (https://github.com/reactjs/react-transition-group) for basic animations.
+A set of React Transition Wrapper Components (https://github.com/reactjs/react-transition-group) for basic animations.
 
 [Checkout the Storybook!](http://react-animation-components.surge.sh/)
 
@@ -9,9 +9,10 @@ A set of React Transition Group components (https://github.com/reactjs/react-tra
   * [FadeInOut](#fadeinout)
   * [TweenTransform](#tweentransform)
   * [FadeTransform](#fadetransform)
-- [Group Components](#group-components)
+- [Wrapper Components](#group-components)
   * [Stagger](#stagger)
   * [Random](#random)
+  * [Loop](#loop)
 
 
 ## Installation
@@ -35,10 +36,10 @@ The following are available on any animation component as well as **any valid `T
 
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
-delay | sets the animations `transitionDelay` | `500` | *number* | `0`
-duration | sets the animations `transitionDuration` | `1000` | *number* | `500`
-timingFn | sets the animations `transitionTimingFunction` | `'ease-in-out'` | *string* | `'ease'`
-style | passes styles to wrapper `div` | `{ display:'flex' }` | *object* | `{}`
+delay | Sets the animations `transitionDelay` | `500` | *number* | `0`
+duration | Sets the animations `transitionDuration` | `1000` | *number* | `500`
+timingFn | Sets the animations `transitionTimingFunction` | `'ease-in-out'` | *string* | `'ease'`
+style | Passes styles to wrapper `div` | `{ display:'flex' }` | *object* | `{}`
 
 ### FadeInOut
 
@@ -66,8 +67,8 @@ Transitions the wrapped element from one transform property to another. Any vali
 
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
-enter | the transform value when `in` is `true` | `'translateX(100px)'` | *string* | `'none'`
-exit | the tranform value when `in` is `false` | `'translateX(100px)'` | *string* | `'none'`
+enter | The transform value when `in` is `true` | `'translateX(100px)'` | *string* | `'none'`
+exit | The transform value when `in` is `false` | `'translateX(100px)'` | *string* | `'none'`
 
 #### Examples
 
@@ -109,7 +110,7 @@ import { FadeTransform } from 'react-animation-components'
 </FadeTranform>
 ```
 
-## Group Components
+## Wrapper Components
 
 ### Stagger
 
@@ -119,8 +120,8 @@ Uses `TransitionGroup` to stagger `delay` on a set of animation components
 
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
-delay | the amount to separate each stagger by | `1000` | *number* | `100`
-chunk | used to limit the stagger into "chunks". | `5` | *number* | `0`
+delay | The amount to separate each stagger by | `1000` | *number* | `100`
+chunk | Used to limit the stagger into "chunks". | `5` | *number* | `0`
 
 #### Examples
 
@@ -152,6 +153,7 @@ const items = ['first', 'second', 'third', 'fourth', 'fifth'];
     )}
 </Stagger>
 ```
+
 ### Random
 
 Uses `TransitionGroup` to randomize `delay` on a set of animation components
@@ -160,8 +162,8 @@ Uses `TransitionGroup` to randomize `delay` on a set of animation components
 
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
-minDelay | minimum delay possible | `100` | *number* | `0`
-maxDelay | maximum delay possible | `5000` | *number* | `1500`
+minDelay | Minimum delay possible | `100` | *number* | `0`
+maxDelay | Maximum delay possible | `5000` | *number* | `1500`
 
 #### Examples
 
@@ -189,4 +191,35 @@ const items = ['first', 'second', 'third', 'fourth', 'fifth'];
         )
     )}
 </Random>
+```
+
+### Loop
+
+Loops using the `onEntered` and `onExited` callbacks to toggle `in` on a **single** animation component
+
+#### Props
+
+Key | Description | Example | Type | Default Value
+------------ | -------------| -------------| -------------| -------------
+interval | Sets the interval to toggle `in`. Also sets the `duration` | `1000` | *number* | `500`
+iterations | Maximum number of loops | `5.5` | *number* | `Infinity`
+onIterate | Callback that is called with the current count each time the loop iterates. Count is incremented by `0.5` | any valid function | *function* | `Function.prototype(noop)`
+onComplete | Callback that is called when the `iterations` have been met. Waits an additional `interval` to ensure its called when the last iteration has completed | any valid function | *function* | `Function.prototype(noop)`
+
+#### Examples
+
+```
+import { FadeInOut, Loop } from 'react-animation-components'
+
+<Loop>
+    <FadeInOut>
+        <h1>I will Fade in and out repeatedly on 500ms intervals</h1>
+    </FadeInOut>
+</Loop>
+
+<Loop iterations={5.5}>
+    <FadeInOut>
+        <h1>I will Fade in and out repeatedly on 500ms intervals 5.5 times</h1>
+    </FadeInOut>
+</Loop>
 ```
