@@ -6,9 +6,10 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import {
     FadeInOut,
     FadeTransform,
-    TweenTransform,
-    Stagger,
+    Loop,
     Random,
+    Stagger,
+    TweenTransform,
 } from '../src/index';
 
 storiesOf('Animations/FadeInOut', module)
@@ -58,7 +59,7 @@ storiesOf('Animations/FadeTransform', module)
         </FadeTransform>
     ));
 
-storiesOf('Groups/Stagger', module)
+storiesOf('Wrappers/Stagger', module)
     .addDecorator(withKnobs)
     .add('default', () => (
         <Stagger>
@@ -99,7 +100,7 @@ storiesOf('Groups/Stagger', module)
         </Stagger>
     ));
 
-storiesOf('Groups/Random', module)
+storiesOf('Wrappers/Random', module)
     .addDecorator(withKnobs)
     .add('default', () => (
         <Random>
@@ -119,4 +120,48 @@ storiesOf('Groups/Random', module)
                 <h1>Example</h1>
             </FadeInOut>
         </Random>
+    ));
+
+storiesOf('Wrappers/Loop', module)
+    .addDecorator(withKnobs)
+    .add('Bounce', () => (
+        <Loop
+            in={boolean('in', false)}
+            interval={number('interval', 500)}
+            onIterate={count => {
+                console.log(count);
+            }}
+            iterations={5}
+        >
+            <TweenTransform enter="translateY(10vh)">
+                <h1>Example</h1>
+            </TweenTransform>
+        </Loop>
+    ))
+    .add('Pulse', () => (
+        <Loop in={boolean('in', false)} interval={number('interval', 500)}>
+            <TweenTransform
+                enter="scale(1.2)"
+                style={{ display: 'inline-block' }}
+            >
+                <h1>Example</h1>
+            </TweenTransform>
+        </Loop>
+    ))
+    .add('Turn', () => (
+        <Loop in={boolean('in', false)} interval={number('interval', 500)}>
+            <TweenTransform
+                enter="rotate(90deg)"
+                style={{ display: 'inline-block' }}
+            >
+                <h1>Example</h1>
+            </TweenTransform>
+        </Loop>
+    ))
+    .add('Blink', () => (
+        <Loop in={boolean('in', false)} interval={number('interval', 500)}>
+            <FadeInOut>
+                <h1>DONT DO THIS</h1>
+            </FadeInOut>
+        </Loop>
     ));
