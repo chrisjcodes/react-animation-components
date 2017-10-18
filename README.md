@@ -31,7 +31,7 @@ Make sure you also have installed the following peer dependencies:
 
 ### Props available on all animation components
 
-The following are available on any animation component as well as **any valid `Transition` props**. Transitions are set to `appear` and their `timeout` is calculated by combining the `delay` and `duration` by default but can be overwritten. When using `unmountOnExit` / `mountOnEnter` you may have to pass a `timeout` to prevent transition phases from moving too quickly and snapping elements off and on the DOM.
+The following are available on any animation component as well as **any valid `Transition` props**. Transitions are set to `appear` and their `timeout` is calculated by combining the `delay` and `duration` by default but can be overwritten.
 
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
