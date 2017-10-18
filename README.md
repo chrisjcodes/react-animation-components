@@ -195,12 +195,13 @@ const items = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 ### Loop
 
-Loops using the `onEntered` and `onExited` callbacks to toggle `in` on a **single** animation component
+Loops using the `onEntered` and `onExited` callbacks to toggle `in` on a **single** animation component.
 
 #### Props
 
 Key | Description | Example | Type | Default Value
 ------------ | -------------| -------------| -------------| -------------
+in | Initializes the loop when `true` | `true` | *bool* | `false`
 interval | Sets the interval to toggle `in`. Also sets the `duration` | `1000` | *number* | `500`
 iterations | Maximum number of loops | `5.5` | *number* | `Infinity`
 onIterate | Callback that is called with the current count each time the loop iterates. Count is incremented by `0.5` | any valid function | *function* | `Function.prototype(noop)`
@@ -211,13 +212,13 @@ onComplete | Callback that is called when the `iterations` have been met. Waits 
 ```
 import { FadeInOut, Loop } from 'react-animation-components'
 
-<Loop>
+<Loop in>
     <FadeInOut>
         <h1>I will Fade in and out repeatedly on 500ms intervals</h1>
     </FadeInOut>
 </Loop>
 
-<Loop iterations={5.5}>
+<Loop in iterations={5.5}>
     <FadeInOut>
         <h1>I will Fade in and out repeatedly on 500ms intervals 5.5 times</h1>
     </FadeInOut>
