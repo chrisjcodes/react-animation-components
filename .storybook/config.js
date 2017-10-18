@@ -1,7 +1,10 @@
-import { configure } from '@storybook/react';
+import { configure, addDecorator } from '@storybook/react';
+import AppDecorator from './AppDecorator';
 
 function loadStories() {
-  require('../stories');
+    require('../stories');
 }
+
+addDecorator(AppDecorator);
 
 configure(loadStories, module);
