@@ -123,33 +123,26 @@ storiesOf('Wrappers/Random', module)
     ));
 
 storiesOf('Wrappers/Loop', module)
-    .addDecorator(withKnobs)
     .add('Bounce', () => (
-        <Loop
-            in={boolean('in', false)}
-            interval={number('interval', 500)}
-            onIterate={count => {
-                console.log(count);
-            }}
-            iterations={5}
-        >
-            <TweenTransform enter="translateY(10vh)">
+        <Loop in>
+            <TweenTransform enter="translateY(10vh)" timeout={200}>
                 <h1>Example</h1>
             </TweenTransform>
         </Loop>
     ))
     .add('Pulse', () => (
-        <Loop in={boolean('in', false)} interval={number('interval', 500)}>
+        <Loop in>
             <TweenTransform
                 enter="scale(1.2)"
                 style={{ display: 'inline-block' }}
+                timeout={100}
             >
                 <h1>Example</h1>
             </TweenTransform>
         </Loop>
     ))
     .add('Turn', () => (
-        <Loop in={boolean('in', false)} interval={number('interval', 500)}>
+        <Loop in>
             <TweenTransform
                 enter="rotate(90deg)"
                 style={{ display: 'inline-block' }}
@@ -159,9 +152,9 @@ storiesOf('Wrappers/Loop', module)
         </Loop>
     ))
     .add('Blink', () => (
-        <Loop in={boolean('in', false)} interval={number('interval', 500)}>
+        <Loop in>
             <FadeInOut>
-                <h1>DONT DO THIS</h1>
+                <h1>Example</h1>
             </FadeInOut>
         </Loop>
     ));
