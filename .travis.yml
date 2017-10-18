@@ -11,10 +11,11 @@ before_script:
   - npm prune
 script:
   - npm run test:single
+  - npm run build
 after_success:
   - npm run semantic-release
 before_deploy:
-  - npm run build-storybook && ls
+  - npm run build-storybook
 deploy:
   skip_cleanup: true
   provider: surge

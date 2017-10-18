@@ -9,7 +9,7 @@
         "test:single": "jest",
         "test": "jest --watch",
         "semantic-release":
-            "semantic-release pre && npm run build && npm publish && semantic-release post",
+            "semantic-release pre && npm publish && semantic-release post",
         "start": "npm run storybook",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
