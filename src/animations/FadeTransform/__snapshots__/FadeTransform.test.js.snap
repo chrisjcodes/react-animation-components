@@ -11,6 +11,7 @@ exports[`FadeTranform can accept custom styles 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
+      "willChange": "transform, opacity",
     }
   }
 />
@@ -26,6 +27,7 @@ exports[`FadeTranform renders 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
+      "willChange": "transform, opacity",
     }
   }
 />
@@ -41,6 +43,7 @@ exports[`FadeTranform sets finish 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
+      "willChange": "transform, opacity",
     }
   }
 />
@@ -56,6 +59,7 @@ exports[`FadeTranform sets start 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
+      "willChange": "transform, opacity",
     }
   }
 />
@@ -71,6 +75,7 @@ exports[`FadeTranform sets transitionDelay with delay prop 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
+      "willChange": "transform, opacity",
     }
   }
 />
@@ -86,6 +91,7 @@ exports[`FadeTranform sets transitionDuration with duration prop 1`] = `
       "transitionDuration": "1000ms",
       "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease",
+      "willChange": "transform, opacity",
     }
   }
 />
@@ -101,6 +107,7 @@ exports[`FadeTranform sets transitionTimingFunction with timingFn prop 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform, opacity",
       "transitionTimingFunction": "ease-in-out",
+      "willChange": "transform, opacity",
     }
   }
 />

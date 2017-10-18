@@ -10,6 +10,7 @@ exports[`TweenTransform can accept custom styles 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
+      "willChange": "transform",
     }
   }
 />
@@ -24,6 +25,7 @@ exports[`TweenTransform renders 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
+      "willChange": "transform",
     }
   }
 />
@@ -38,6 +40,7 @@ exports[`TweenTransform sets finish 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
+      "willChange": "transform",
     }
   }
 />
@@ -52,6 +55,7 @@ exports[`TweenTransform sets start 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
+      "willChange": "transform",
     }
   }
 />
@@ -66,6 +70,7 @@ exports[`TweenTransform sets transitionDelay with delay prop 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
+      "willChange": "transform",
     }
   }
 />
@@ -80,6 +85,7 @@ exports[`TweenTransform sets transitionDuration with duration prop 1`] = `
       "transitionDuration": "1000ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease",
+      "willChange": "transform",
     }
   }
 />
@@ -94,6 +100,7 @@ exports[`TweenTransform sets transitionTimingFunction with timingFn prop 1`] = `
       "transitionDuration": "500ms",
       "transitionProperty": "transform",
       "transitionTimingFunction": "ease-in-out",
+      "willChange": "transform",
     }
   }
 />
