@@ -1,5 +1,7 @@
 # react-animation-components
 
+[![Travis](https://img.shields.io/travis/unruffledBeaver/react-animation-components.svg?style=flat-square)]()
+
 A set of React Transition Wrapper Components (https://github.com/reactjs/react-transition-group) for basic animations.
 
 [Checkout the Storybook!](http://react-animation-components.surge.sh/)
