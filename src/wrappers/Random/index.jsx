@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, umber } from 'prop-types';
+import { node, number } from 'prop-types';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 
 export const getRandomDelay = (minDelay, maxDelay) => {
