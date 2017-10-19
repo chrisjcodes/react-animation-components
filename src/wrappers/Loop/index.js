@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { element, func, number } from 'prop-types';
 
-export default class _iterate extends PureComponent {
+export default class Loop extends PureComponent {
     static propTypes = {
         children: element.isRequired,
         interval: number,
