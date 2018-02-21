@@ -6,16 +6,15 @@ A set of React Transition Wrapper Components (https://github.com/reactjs/react-t
 
 [Checkout the Storybook!](http://react-animation-components.surge.sh/)
 
-- [Installation](#installation)
-- [Animation Components](#animation-components)
-  * [FadeInOut](#fadeinout)
-  * [TweenTransform](#tweentransform)
-  * [FadeTransform](#fadetransform)
-- [Wrapper Components](#group-components)
-  * [Stagger](#stagger)
-  * [Random](#random)
-  * [Loop](#loop)
-
+* [Installation](#installation)
+* [Animation Components](#animation-components)
+    * [FadeInOut](#fadeinout)
+    * [TweenTransform](#tweentransform)
+    * [FadeTransform](#fadetransform)
+* [Wrapper Components](#group-components)
+    * [Stagger](#stagger)
+    * [Random](#random)
+    * [Loop](#loop)
 
 ## Installation
 
@@ -36,12 +35,12 @@ Make sure you also have installed the following peer dependencies:
 
 The following are available on any animation component as well as **any valid `Transition` props**. Transitions are set to `appear` and their `timeout` is calculated by combining the `delay` and `duration` by default but can be overwritten.
 
-Key | Description | Example | Type | Default Value
------------- | -------------| -------------| -------------| -------------
-delay | Sets the animations `transitionDelay` | `500` | *number* | `0`
-duration | Sets the animations `transitionDuration` | `1000` | *number* | `500`
-timingFn | Sets the animations `transitionTimingFunction` | `'ease-in-out'` | *string* | `'ease'`
-style | Passes styles to wrapper `div` | `{ display:'flex' }` | *object* | `{}`
+| Key      | Description                                    | Example              | Type     | Default Value |
+| -------- | ---------------------------------------------- | -------------------- | -------- | ------------- |
+| delay    | Sets the animations `transitionDelay`          | `500`                | _number_ | `0`           |
+| duration | Sets the animations `transitionDuration`       | `1000`               | _number_ | `500`         |
+| timingFn | Sets the animations `transitionTimingFunction` | `'ease-in-out'`      | _string_ | `'ease'`      |
+| style    | Passes styles to wrapper `div`                 | `{ display:'flex' }` | _object_ | `{}`          |
 
 ### FadeInOut
 
@@ -67,30 +66,30 @@ Transitions the wrapped element from one transform property to another. Any vali
 
 #### Props
 
-Key | Description | Example | Type | Default Value
------------- | -------------| -------------| -------------| -------------
-enter | The transform value when `in` is `true` | `'translateX(100px)'` | *string* | `'none'`
-exit | The transform value when `in` is `false` | `'translateX(100px)'` | *string* | `'none'`
+| Key   | Description                              | Example               | Type     | Default Value |
+| ----- | ---------------------------------------- | --------------------- | -------- | ------------- |
+| enter | The transform value when `in` is `true`  | `'translateX(100px)'` | _string_ | `'none'`      |
+| exit  | The transform value when `in` is `false` | `'translateX(100px)'` | _string_ | `'none'`      |
 
 #### Examples
 
 ```
 import { TweenTransform } from 'react-animation-components'
 
-<TweenTranform enter="translateX(100px)" in>
+<TweenTransform enter="translateX(100px)" in>
   <h1>I'm transitioning from my initial position to 100px right when `in` is `true`</h1>
-</TweenTranform>
+</TweenTransform>
 
-<TweenTranform enter="translateX(100px)" exit="translateX(-100px)" in>
+<TweenTransform enter="translateX(100px)" exit="translateX(-100px)" in>
   <h1>
     I'm 100px to the left of my initial position and
     I transition 100px right of my initial when `in` is `true`
   </h1>
-</TweenTranform>
+</TweenTransform>
 
-<TweenTranform enter="rotate(90deg)" in>
+<TweenTransform enter="rotate(90deg)" in>
   <h1>I transition from initial positon to rotate 90deg when `in` is `true`</h1>
-</TweenTranform>
+</TweenTransform>
 ```
 
 ### FadeTransform
@@ -126,10 +125,10 @@ Uses `TransitionGroup` to stagger `delay` on a set of animation components
 
 #### Props
 
-Key | Description | Example | Type | Default Value
------------- | -------------| -------------| -------------| -------------
-delay | The amount to separate each stagger by | `1000` | *number* | `100`
-chunk | Used to limit the stagger into "chunks". | `5` | *number* | `0`
+| Key   | Description                              | Example | Type     | Default Value |
+| ----- | ---------------------------------------- | ------- | -------- | ------------- |
+| delay | The amount to separate each stagger by   | `1000`  | _number_ | `100`         |
+| chunk | Used to limit the stagger into "chunks". | `5`     | _number_ | `0`           |
 
 #### Examples
 
@@ -168,10 +167,10 @@ Uses `TransitionGroup` to randomize `delay` on a set of animation components
 
 #### Props
 
-Key | Description | Example | Type | Default Value
------------- | -------------| -------------| -------------| -------------
-minDelay | Minimum delay possible | `100` | *number* | `0`
-maxDelay | Maximum delay possible | `5000` | *number* | `1500`
+| Key      | Description            | Example | Type     | Default Value |
+| -------- | ---------------------- | ------- | -------- | ------------- |
+| minDelay | Minimum delay possible | `100`   | _number_ | `0`           |
+| maxDelay | Maximum delay possible | `5000`  | _number_ | `1500`        |
 
 #### Examples
 
@@ -207,13 +206,13 @@ Loops using the `onEntered` and `onExited` callbacks to toggle `in` on a **singl
 
 #### Props
 
-Key | Description | Example | Type | Default Value
------------- | -------------| -------------| -------------| -------------
-in | Initializes the loop when `true` | `true` | *bool* | `false`
-interval | Sets the interval to toggle `in`. Also sets the `duration` | `1000` | *number* | `500`
-iterations | Maximum number of loops | `5.5` | *number* | `Infinity`
-onIterate | Callback that is called with the current count each time the loop iterates. Count is incremented by `0.5` | any valid function | *function* | `Function.prototype(noop)`
-onComplete | Callback that is called when the `iterations` have been met. Waits an additional `interval` to ensure its called when the last iteration has completed | any valid function | *function* | `Function.prototype(noop)`
+| Key        | Description                                                                                                                                            | Example            | Type       | Default Value              |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ | ---------- | -------------------------- |
+| in         | Initializes the loop when `true`                                                                                                                       | `true`             | _bool_     | `false`                    |
+| interval   | Sets the interval to toggle `in`. Also sets the `duration`                                                                                             | `1000`             | _number_   | `500`                      |
+| iterations | Maximum number of loops                                                                                                                                | `5.5`              | _number_   | `Infinity`                 |
+| onIterate  | Callback that is called with the current count each time the loop iterates. Count is incremented by `0.5`                                              | any valid function | _function_ | `Function.prototype(noop)` |
+| onComplete | Callback that is called when the `iterations` have been met. Waits an additional `interval` to ensure its called when the last iteration has completed | any valid function | _function_ | `Function.prototype(noop)` |
 
 #### Examples
 
