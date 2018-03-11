@@ -1,5 +1,5 @@
 import React from 'react';
-import Stagger, { getStaggerDelay } from './index.jsx';
+import Stagger, { getStaggerDelay, getMaxDelay } from './index.jsx';
 import renderer from 'react-test-renderer';
 
 describe('Stagger', () => {
@@ -22,6 +22,33 @@ describe('Stagger', () => {
         const idx = 5;
         const expected = 0;
         const actual = getStaggerDelay(idx, props);
+
+        expect(actual).toBe(expected);
+    });
+
+    test('getMaxDelay returns correct value', () => {
+        const props = {
+            delay: 100,
+            duration: 500,
+        };
+
+        const count = 5;
+        const expected = 900;
+        const actual = getMaxDelay(count, props);
+
+        expect(actual).toBe(expected);
+    });
+
+    test('getMaxDelay returns correct value when chunking', () => {
+        const props = {
+            delay: 100,
+            duration: 500,
+            chunk: 2,
+        };
+
+        const count = 5;
+        const expected = 600;
+        const actual = getMaxDelay(count, props);
 
         expect(actual).toBe(expected);
     });
