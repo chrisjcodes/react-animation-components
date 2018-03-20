@@ -2,6 +2,7 @@
 
 exports[`FadeInOut can accept custom styles 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "background": "black",
@@ -18,6 +19,7 @@ exports[`FadeInOut can accept custom styles 1`] = `
 
 exports[`FadeInOut renders 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -33,6 +35,7 @@ exports[`FadeInOut renders 1`] = `
 
 exports[`FadeInOut sets transitionDelay with delay prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -48,6 +51,7 @@ exports[`FadeInOut sets transitionDelay with delay prop 1`] = `
 
 exports[`FadeInOut sets transitionDuration with duration prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -63,6 +67,7 @@ exports[`FadeInOut sets transitionDuration with duration prop 1`] = `
 
 exports[`FadeInOut sets transitionTimingFunction with timingFn prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,

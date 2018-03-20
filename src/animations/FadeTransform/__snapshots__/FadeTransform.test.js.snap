@@ -2,6 +2,7 @@
 
 exports[`FadeTranform can accept custom styles 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "background": "black",
@@ -19,6 +20,7 @@ exports[`FadeTranform can accept custom styles 1`] = `
 
 exports[`FadeTranform renders 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -35,6 +37,7 @@ exports[`FadeTranform renders 1`] = `
 
 exports[`FadeTranform sets finish 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -51,6 +54,7 @@ exports[`FadeTranform sets finish 1`] = `
 
 exports[`FadeTranform sets start 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -67,6 +71,7 @@ exports[`FadeTranform sets start 1`] = `
 
 exports[`FadeTranform sets transitionDelay with delay prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -83,6 +88,7 @@ exports[`FadeTranform sets transitionDelay with delay prop 1`] = `
 
 exports[`FadeTranform sets transitionDuration with duration prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -99,6 +105,7 @@ exports[`FadeTranform sets transitionDuration with duration prop 1`] = `
 
 exports[`FadeTranform sets transitionTimingFunction with timingFn prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
