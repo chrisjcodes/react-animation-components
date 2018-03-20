@@ -12,6 +12,8 @@ import {
     TweenTransform,
 } from '../src/index';
 
+const exampleArray = ['Example', 'Example', 'Example', 'Example', 'Example'];
+
 storiesOf('Animations/FadeInOut', module)
     .addDecorator(withKnobs)
     .add('default', () => (
@@ -62,63 +64,33 @@ storiesOf('Animations/FadeTransform', module)
 storiesOf('Wrappers/Stagger', module)
     .addDecorator(withKnobs)
     .add('default', () => (
-        <Stagger>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
+        <Stagger in={boolean('in', true)}>
+            {exampleArray.map((example, i) => (
+                <FadeInOut key={`${i}-example`}>
+                    <h1>{example}</h1>
+                </FadeInOut>
+            ))}
         </Stagger>
     ))
     .add('chunks of 2', () => (
-        <Stagger chunk={2}>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
+        <Stagger in={boolean('in', true)} chunk={2}>
+            {exampleArray.map((example, i) => (
+                <FadeInOut key={`${i}-example`}>
+                    <h1>{example}</h1>
+                </FadeInOut>
+            ))}
         </Stagger>
     ));
 
 storiesOf('Wrappers/Random', module)
     .addDecorator(withKnobs)
     .add('default', () => (
-        <Random>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
-            <FadeInOut>
-                <h1>Example</h1>
-            </FadeInOut>
+        <Random in={boolean('in', true)}>
+            {exampleArray.map((example, i) => (
+                <FadeInOut key={`${i}-example`}>
+                    <h1>{example}</h1>
+                </FadeInOut>
+            ))}
         </Random>
     ));
 
@@ -141,10 +113,10 @@ storiesOf('Wrappers/Loop', module)
             </TweenTransform>
         </Loop>
     ))
-    .add('Turn', () => (
+    .add('Rotate', () => (
         <Loop in>
             <TweenTransform
-                enter="rotate(90deg)"
+                enter="rotate(360deg)"
                 style={{ display: 'inline-block' }}
             >
                 <h1>Example</h1>
