@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { func, node, number } from 'prop-types';
+import { bool, func, node, number } from 'prop-types';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import _after from 'lodash/after';
 import _omit from 'lodash/omit';
@@ -36,6 +36,7 @@ class Random extends Component {
         return _omit(this.props, [
             'children',
             'duration',
+            'in',
             'maxDelay',
             'minDelay',
             'onComplete',
@@ -43,17 +44,18 @@ class Random extends Component {
     }
 
     render() {
-        const { children, duration, ...props } = this.props;
+        const { children, duration, in: inProp } = this.props;
 
         return (
-            <TransitionGroup appear {...this.getTransitionProps()}>
-                {React.Children.map(children, (child, i) =>
-                    React.cloneElement(child, {
-                        delay: this.delays[i],
-                        duration: duration,
-                        onEntered: this.onComplete,
-                    })
-                )}
+            <TransitionGroup {...this.getTransitionProps()}>
+                {inProp &&
+                    React.Children.map(children, (child, i) =>
+                        React.cloneElement(child, {
+                            delay: this.delays[i],
+                            duration: duration,
+                            onEntered: this.onComplete,
+                        })
+                    )}
             </TransitionGroup>
         );
     }
@@ -61,6 +63,7 @@ class Random extends Component {
 Random.propTypes = {
     children: node.isRequired,
     duration: number,
+    in: bool,
     maxDelay: number,
     minDelay: number,
     onComplete: func,
@@ -68,9 +71,10 @@ Random.propTypes = {
 
 Random.defaultProps = {
     duration: defaultAnimationProps.duration,
-    onComplete: Function.prototype,
+    in: false,
     maxDelay: 1500,
     minDelay: 0,
+    onComplete: Function.prototype,
 };
 
 export default Random;
