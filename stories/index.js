@@ -36,11 +36,11 @@ storiesOf('Animations/TweenTransform', module)
     .add('default', () => (
         <TweenTransform
             in={boolean('in', true)}
+            enterTransform={text('enterTransform', 'translateY(50vh)')}
+            exitTransform={text('exitTransform', 'none')}
             delay={number('delay', 0)}
             duration={number('duration', 500)}
             timingFn={text('timingFn', 'ease')}
-            enter={text('enter', 'translateY(50vh)')}
-            exit={text('exit', 'none')}
         >
             <h1>Example</h1>
         </TweenTransform>
