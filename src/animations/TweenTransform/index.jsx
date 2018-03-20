@@ -20,6 +20,7 @@ const TweenTransform = ({ children, enter, exit, ...props }) => {
         <Transition timeout={getTimeoutValue(props)} {...props}>
             {status => (
                 <div
+                    className={props.className}
                     style={{
                         ...getInlineStyles(props),
                         transform: pos[status],
@@ -37,10 +38,11 @@ const TweenTransform = ({ children, enter, exit, ...props }) => {
 TweenTransform.propTypes = {
     appear: bool,
     children: node.isRequired,
+    className: string,
     delay: number,
     duration: number,
-    exit: string,
     enter: string,
+    exit: string,
     style: object,
     timingFn: string,
 };

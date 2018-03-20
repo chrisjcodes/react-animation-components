@@ -28,6 +28,7 @@ const FadeInOut = props => {
         <Transition timeout={getTimeoutValue(props)} {...props}>
             {status => (
                 <div
+                    className={props.className}
                     style={{
                         ...getInlineStyles(props),
                         ...statusStyles[status],
@@ -45,6 +46,7 @@ const FadeInOut = props => {
 FadeInOut.propTypes = {
     appear: bool,
     children: node.isRequired,
+    className: string,
     delay: number,
     duration: number,
     timingFn: string,
