@@ -8,22 +8,22 @@ import {
     getTimeoutValue,
 } from 'utilities';
 
-const statusStyles = {
-    entered: {
-        opacity: 1,
-    },
-    entering: {
-        opacity: 0,
-    },
-    exited: {
-        opacity: 0,
-    },
-    exiting: {
-        opacity: 0,
-    },
-};
-
 const FadeInOut = props => {
+    const statusStyles = {
+        entered: {
+            opacity: props.enterOpacity,
+        },
+        entering: {
+            opacity: props.exitOpacity,
+        },
+        exited: {
+            opacity: props.exitOpacity,
+        },
+        exiting: {
+            opacity: props.exitOpacity,
+        },
+    };
+
     return (
         <Transition timeout={getTimeoutValue(props)} {...props}>
             {status => (
@@ -49,11 +49,15 @@ FadeInOut.propTypes = {
     className: string,
     delay: number,
     duration: number,
+    enterOpacity: number,
+    exitOpacity: number,
     timingFn: string,
 };
 
 FadeInOut.defaultProps = {
     ...defaultAnimationProps,
+    enterOpacity: 1,
+    exitOpacity: 0,
 };
 
 export default FadeInOut;

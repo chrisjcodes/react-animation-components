@@ -19,6 +19,8 @@ storiesOf('Animations/FadeInOut', module)
     .add('default', () => (
         <FadeInOut
             in={boolean('in', true)}
+            enterOpacity={number('enterOpacity', 1)}
+            exitOpacity={number('exitOpacity', 0)}
             delay={number('delay', 0)}
             duration={number('duration', 500)}
             timingFn={text('timingFn', 'ease')}
