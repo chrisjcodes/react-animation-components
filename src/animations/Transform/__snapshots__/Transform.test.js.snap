@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TweenTransform can accept custom styles 1`] = `
+exports[`Transform can accept custom styles 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "background": "black",
@@ -16,8 +17,9 @@ exports[`TweenTransform can accept custom styles 1`] = `
 />
 `;
 
-exports[`TweenTransform renders 1`] = `
+exports[`Transform renders 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "transform": "none",
@@ -31,8 +33,9 @@ exports[`TweenTransform renders 1`] = `
 />
 `;
 
-exports[`TweenTransform sets finish 1`] = `
+exports[`Transform sets finish 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "transform": "none",
@@ -46,8 +49,9 @@ exports[`TweenTransform sets finish 1`] = `
 />
 `;
 
-exports[`TweenTransform sets start 1`] = `
+exports[`Transform sets start 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "transform": "none",
@@ -61,8 +65,9 @@ exports[`TweenTransform sets start 1`] = `
 />
 `;
 
-exports[`TweenTransform sets transitionDelay with delay prop 1`] = `
+exports[`Transform sets transitionDelay with delay prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "transform": "none",
@@ -76,8 +81,9 @@ exports[`TweenTransform sets transitionDelay with delay prop 1`] = `
 />
 `;
 
-exports[`TweenTransform sets transitionDuration with duration prop 1`] = `
+exports[`Transform sets transitionDuration with duration prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "transform": "none",
@@ -91,8 +97,9 @@ exports[`TweenTransform sets transitionDuration with duration prop 1`] = `
 />
 `;
 
-exports[`TweenTransform sets transitionTimingFunction with timingFn prop 1`] = `
+exports[`Transform sets transitionTimingFunction with timingFn prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "transform": "none",

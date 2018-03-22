@@ -6,15 +6,15 @@ A set of React Transition Wrapper Components (https://github.com/reactjs/react-t
 
 [Checkout the Storybook!](http://react-animation-components.surge.sh/)
 
-* [Installation](#installation)
-* [Animation Components](#animation-components)
-    * [FadeInOut](#fadeinout)
-    * [TweenTransform](#tweentransform)
-    * [FadeTransform](#fadetransform)
-* [Wrapper Components](#group-components)
-    * [Stagger](#stagger)
-    * [Random](#random)
-    * [Loop](#loop)
+*   [Installation](#installation)
+*   [Animation Components](#animation-components)
+    *   [Fade](#Fade)
+    *   [Transform](#Transform)
+    *   [FadeTransform](#fadetransform)
+*   [Wrapper Components](#group-components)
+    *   [Stagger](#stagger)
+    *   [Random](#random)
+    *   [Loop](#loop)
 
 ## Installation
 
@@ -42,25 +42,25 @@ The following are available on any animation component as well as **any valid `T
 | timingFn | Sets the animations `transitionTimingFunction` | `'ease-in-out'`      | _string_ | `'ease'`      |
 | style    | Passes styles to wrapper `div`                 | `{ display:'flex' }` | _object_ | `{}`          |
 
-### FadeInOut
+### Fade
 
 Transitions the wrapped element's opacity from `0` to `1`
 
 #### Examples
 
 ```
-import { FadeInOut } from 'react-animation-components'
+import { Fade } from 'react-animation-components'
 
-<FadeInOut in>
+<Fade in>
   <h1>I'm transitioning to opacity:1</h1>
-</FadeInOut>
+</Fade>
 
-<FadeInOut in={false}>
+<Fade in={false}>
   <h1>I'm transitioning to opacity:0</h1>
-</FadeInOut>
+</Fade>
 ```
 
-### TweenTransform
+### Transform
 
 Transitions the wrapped element from one transform property to another. Any valid `transform` property will work.
 
@@ -74,27 +74,27 @@ Transitions the wrapped element from one transform property to another. Any vali
 #### Examples
 
 ```
-import { TweenTransform } from 'react-animation-components'
+import { Transform } from 'react-animation-components'
 
-<TweenTransform enter="translateX(100px)" in>
+<Transform enter="translateX(100px)" in>
   <h1>I'm transitioning from my initial position to 100px right when `in` is `true`</h1>
-</TweenTransform>
+</Transform>
 
-<TweenTransform enter="translateX(100px)" exit="translateX(-100px)" in>
+<Transform enter="translateX(100px)" exit="translateX(-100px)" in>
   <h1>
     I'm 100px to the left of my initial position and
     I transition 100px right of my initial when `in` is `true`
   </h1>
-</TweenTransform>
+</Transform>
 
-<TweenTransform enter="rotate(90deg)" in>
+<Transform enter="rotate(90deg)" in>
   <h1>I transition from initial positon to rotate 90deg when `in` is `true`</h1>
-</TweenTransform>
+</Transform>
 ```
 
 ### FadeTransform
 
-Combines `FadeInOut` and `TweenTransform` and accepts all the props of both.
+Combines `Fade` and `Transform` and accepts all the props of both.
 
 #### Examples
 
@@ -133,16 +133,16 @@ Uses `TransitionGroup` to stagger `delay` on a set of animation components
 #### Examples
 
 ```
-import { FadeInOut, Stagger } from 'react-animation-components'
+import { Fade, Stagger } from 'react-animation-components'
 
 const items = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 <Stagger>
     {items.map(
         item => (
-            <FadeInOut>
+            <Fade>
                 <h1>Each {item} will transition in with an incrementally larger delay than the previous</h1>
-            </FadeInOut>
+            </Fade>
         )
     )}
 </Stagger>
@@ -150,12 +150,12 @@ const items = ['first', 'second', 'third', 'fourth', 'fifth'];
 <Stagger chunk={4}>
     {items.map(
         item => (
-            <FadeInOut>
+            <Fade>
                 <h1>
                   Each {item} will increment in segments of 4.
                   First is 0, Second is 100, Third is 200, Fourth is 0, fifth is 100, and so on
                 </h1>
-            </FadeInOut>
+            </Fade>
         )
     )}
 </Stagger>
@@ -175,16 +175,16 @@ Uses `TransitionGroup` to randomize `delay` on a set of animation components
 #### Examples
 
 ```
-import { FadeInOut, Random } from 'react-animation-components'
+import { Fade, Random } from 'react-animation-components'
 
 const items = ['first', 'second', 'third', 'fourth', 'fifth'];
 
 <Random>
     {items.map(
         item => (
-            <FadeInOut>
+            <Fade>
                 <h1>Each {item} will randomly FadeIn between 0 and 1500ms</h1>
-            </FadeInOut>
+            </Fade>
         )
     )}
 </Random>
@@ -192,9 +192,9 @@ const items = ['first', 'second', 'third', 'fourth', 'fifth'];
 <Random minDelay={1000} maxDelay={5000}>
     {items.map(
         item => (
-            <FadeInOut>
+            <Fade>
                 <h1>Each {item} will randomly FadeIn between 1000ms and 5000ms</h1>
-            </FadeInOut>
+            </Fade>
         )
     )}
 </Random>
@@ -217,17 +217,17 @@ Loops using the `onEntered` and `onExited` callbacks to toggle `in` on a **singl
 #### Examples
 
 ```
-import { FadeInOut, Loop } from 'react-animation-components'
+import { Fade, Loop } from 'react-animation-components'
 
 <Loop in>
-    <FadeInOut>
+    <Fade>
         <h1>I will Fade in and out repeatedly on 500ms intervals</h1>
-    </FadeInOut>
+    </Fade>
 </Loop>
 
 <Loop in iterations={5.5}>
-    <FadeInOut>
+    <Fade>
         <h1>I will Fade in and out repeatedly on 500ms intervals 5.5 times</h1>
-    </FadeInOut>
+    </Fade>
 </Loop>
 ```
