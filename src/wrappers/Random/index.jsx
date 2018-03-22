@@ -12,16 +12,16 @@ export const getRandomDelay = (minDelay, maxDelay) => {
 };
 
 class Random extends Component {
-    delays = React.Children.map(this.props.children, c =>
+    componentWillUnmount() {
+        clearTimeout(this.onCompleteTimeout);
+    }
+
+    delays = React.Children.map(this.props.children, () =>
         getRandomDelay(this.props.minDelay, this.props.maxDelay)
     );
 
     onCompleteTimeout = null;
     totalChildren = React.Children.count(this.props.children);
-
-    componentWillUnmount() {
-        clearTimeout(this.onCompleteTimeout);
-    }
 
     onComplete = _after(this.totalChildren, () => {
         const maxDelay = Math.max(...this.delays);
@@ -52,7 +52,7 @@ class Random extends Component {
                     React.Children.map(children, (child, i) =>
                         React.cloneElement(child, {
                             delay: this.delays[i],
-                            duration: duration,
+                            duration,
                             onEntered: this.onComplete,
                         })
                     )}

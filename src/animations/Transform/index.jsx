@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, object, string } from 'prop-types';
+import { bool, node, number, object, string } from 'prop-types';
 import { Transition } from 'react-transition-group';
 
 import {

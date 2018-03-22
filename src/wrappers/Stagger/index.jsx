@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { func, node, number } from 'prop-types';
+import { bool, func, node, number } from 'prop-types';
 import { TransitionGroup } from 'react-transition-group';
 import _after from 'lodash/after';
 import _omit from 'lodash/omit';

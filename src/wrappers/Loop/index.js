@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
-import { element, func, number } from 'prop-types';
+import { bool, element, func, number } from 'prop-types';
 
 export default class Loop extends PureComponent {
     static propTypes = {
         children: element.isRequired,
+        in: bool,
         interval: number,
         iterations: number,
         onComplete: func,
@@ -22,10 +23,6 @@ export default class Loop extends PureComponent {
         in: this.props.in,
     };
 
-    count = 0;
-    pendingOnComplete = null;
-    pendingStateChange = null;
-
     componentWillReceiveProps(nextProps) {
         if (nextProps.in) {
             this.setState({ in: true });
@@ -35,6 +32,10 @@ export default class Loop extends PureComponent {
     componentWillUnmount() {
         this._clearTimeouts();
     }
+
+    count = 0;
+    pendingOnComplete = null;
+    pendingStateChange = null;
 
     _clearTimeouts() {
         clearTimeout(this.pendingStateChange);
