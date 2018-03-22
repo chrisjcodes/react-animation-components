@@ -1,7 +1,13 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    text,
+    boolean,
+    number,
+    object,
+} from '@storybook/addon-knobs';
 
 import {
     FadeInOut,
@@ -19,13 +25,13 @@ storiesOf('Animations/FadeInOut', module)
     .add('default', () => (
         <FadeInOut
             in={boolean('in', true)}
-            enterOpacity={number('enterOpacity', 1)}
-            exitOpacity={number('exitOpacity', 0)}
             delay={number('delay', 0)}
             duration={number('duration', 500)}
             timingFn={text('timingFn', 'ease')}
             unmountOnExit={boolean('unmountOnExit', false)}
             mountOnEnter={boolean('mountOnEnter', false)}
+            enterOpacity={number('enterOpacity', 1)}
+            exitOpacity={number('exitOpacity', 0)}
         >
             <h1>Example</h1>
         </FadeInOut>
@@ -36,11 +42,11 @@ storiesOf('Animations/TweenTransform', module)
     .add('default', () => (
         <TweenTransform
             in={boolean('in', true)}
-            enterTransform={text('enterTransform', 'translateY(50vh)')}
-            exitTransform={text('exitTransform', 'none')}
             delay={number('delay', 0)}
             duration={number('duration', 500)}
             timingFn={text('timingFn', 'ease')}
+            enterTransform={text('enterTransform', 'translateY(50vh)')}
+            exitTransform={text('exitTransform', 'none')}
         >
             <h1>Example</h1>
         </TweenTransform>
@@ -54,10 +60,16 @@ storiesOf('Animations/FadeTransform', module)
             delay={number('delay', 0)}
             duration={number('duration', 500)}
             timingFn={text('timingFn', 'ease')}
-            enter={text('enter', 'none')}
-            exit={text('exit', 'translateY(50vh)')}
             unmountOnExit={boolean('unmountOnExit', false)}
             mountOnEnter={boolean('mountOnEnter', false)}
+            fadeProps={object('fadeProps', {
+                enterOpacity: 1,
+                exitOpacity: 0,
+            })}
+            transformProps={object('transformProps', {
+                enterTransform: 'none',
+                exitTransform: 'translateY(50vh)',
+            })}
         >
             <h1>Example</h1>
         </FadeTransform>
@@ -99,7 +111,7 @@ storiesOf('Wrappers/Random', module)
 storiesOf('Wrappers/Loop', module)
     .add('Bounce', () => (
         <Loop in>
-            <TweenTransform enter="translateY(10vh)" timeout={200}>
+            <TweenTransform enterTransform="translateY(10vh)" timeout={200}>
                 <h1>Example</h1>
             </TweenTransform>
         </Loop>
@@ -107,7 +119,7 @@ storiesOf('Wrappers/Loop', module)
     .add('Pulse', () => (
         <Loop in>
             <TweenTransform
-                enter="scale(1.2)"
+                enterTransform="scale(1.2)"
                 style={{ display: 'inline-block' }}
                 timeout={100}
             >
@@ -118,7 +130,7 @@ storiesOf('Wrappers/Loop', module)
     .add('Rotate', () => (
         <Loop in>
             <TweenTransform
-                enter="rotate(360deg)"
+                enterTransform="rotate(360deg)"
                 style={{ display: 'inline-block' }}
             >
                 <h1>Example</h1>
