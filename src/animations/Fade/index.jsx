@@ -8,7 +8,7 @@ import {
     getTimeoutValue,
 } from 'utilities';
 
-const FadeInOut = props => {
+const Fade = props => {
     const statusStyles = {
         entered: {
             opacity: props.enterOpacity,
@@ -43,7 +43,7 @@ const FadeInOut = props => {
     );
 };
 
-FadeInOut.propTypes = {
+Fade.propTypes = {
     appear: bool,
     children: node.isRequired,
     className: string,
@@ -54,10 +54,10 @@ FadeInOut.propTypes = {
     timingFn: string,
 };
 
-FadeInOut.defaultProps = {
+Fade.defaultProps = {
     ...defaultAnimationProps,
     enterOpacity: 1,
     exitOpacity: 0,
 };
 
-export default FadeInOut;
+export default Fade;

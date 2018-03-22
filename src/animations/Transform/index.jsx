@@ -8,12 +8,7 @@ import {
     getTimeoutValue,
 } from 'utilities';
 
-const TweenTransform = ({
-    children,
-    enterTransform,
-    exitTransform,
-    ...props
-}) => {
+const Transform = ({ children, enterTransform, exitTransform, ...props }) => {
     const pos = {
         entering: exitTransform,
         entered: enterTransform,
@@ -40,7 +35,7 @@ const TweenTransform = ({
     );
 };
 
-TweenTransform.propTypes = {
+Transform.propTypes = {
     appear: bool,
     children: node.isRequired,
     className: string,
@@ -52,10 +47,10 @@ TweenTransform.propTypes = {
     timingFn: string,
 };
 
-TweenTransform.defaultProps = {
+Transform.defaultProps = {
     ...defaultAnimationProps,
     enterTransform: 'none',
     exitTransform: 'none',
 };
 
-export default TweenTransform;
+export default Transform;

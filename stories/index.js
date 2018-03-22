@@ -10,20 +10,20 @@ import {
 } from '@storybook/addon-knobs';
 
 import {
-    FadeInOut,
+    Fade,
     FadeTransform,
     Loop,
     Random,
     Stagger,
-    TweenTransform,
+    Transform,
 } from '../src/index';
 
 const exampleArray = ['Example', 'Example', 'Example', 'Example', 'Example'];
 
-storiesOf('Animations/FadeInOut', module)
+storiesOf('Animations/Fade', module)
     .addDecorator(withKnobs)
     .add('default', () => (
-        <FadeInOut
+        <Fade
             in={boolean('in', true)}
             delay={number('delay', 0)}
             duration={number('duration', 500)}
@@ -34,13 +34,13 @@ storiesOf('Animations/FadeInOut', module)
             exitOpacity={number('exitOpacity', 0)}
         >
             <h1>Example</h1>
-        </FadeInOut>
+        </Fade>
     ));
 
-storiesOf('Animations/TweenTransform', module)
+storiesOf('Animations/Transform', module)
     .addDecorator(withKnobs)
     .add('default', () => (
-        <TweenTransform
+        <Transform
             in={boolean('in', true)}
             delay={number('delay', 0)}
             duration={number('duration', 500)}
@@ -49,7 +49,7 @@ storiesOf('Animations/TweenTransform', module)
             exitTransform={text('exitTransform', 'none')}
         >
             <h1>Example</h1>
-        </TweenTransform>
+        </Transform>
     ));
 
 storiesOf('Animations/FadeTransform', module)
@@ -80,18 +80,18 @@ storiesOf('Wrappers/Stagger', module)
     .add('default', () => (
         <Stagger in={boolean('in', true)}>
             {exampleArray.map((example, i) => (
-                <FadeInOut key={`${i}-example`}>
+                <Fade key={`${i}-example`}>
                     <h1>{example}</h1>
-                </FadeInOut>
+                </Fade>
             ))}
         </Stagger>
     ))
     .add('chunks of 2', () => (
         <Stagger in={boolean('in', true)} chunk={2}>
             {exampleArray.map((example, i) => (
-                <FadeInOut key={`${i}-example`}>
+                <Fade key={`${i}-example`}>
                     <h1>{example}</h1>
-                </FadeInOut>
+                </Fade>
             ))}
         </Stagger>
     ));
@@ -101,9 +101,9 @@ storiesOf('Wrappers/Random', module)
     .add('default', () => (
         <Random in={boolean('in', true)}>
             {exampleArray.map((example, i) => (
-                <FadeInOut key={`${i}-example`}>
+                <Fade key={`${i}-example`}>
                     <h1>{example}</h1>
-                </FadeInOut>
+                </Fade>
             ))}
         </Random>
     ));
@@ -111,36 +111,36 @@ storiesOf('Wrappers/Random', module)
 storiesOf('Wrappers/Loop', module)
     .add('Bounce', () => (
         <Loop in>
-            <TweenTransform enterTransform="translateY(10vh)" timeout={200}>
+            <Transform enterTransform="translateY(10vh)" timeout={200}>
                 <h1>Example</h1>
-            </TweenTransform>
+            </Transform>
         </Loop>
     ))
     .add('Pulse', () => (
         <Loop in>
-            <TweenTransform
+            <Transform
                 enterTransform="scale(1.2)"
                 style={{ display: 'inline-block' }}
                 timeout={100}
             >
                 <h1>Example</h1>
-            </TweenTransform>
+            </Transform>
         </Loop>
     ))
     .add('Rotate', () => (
         <Loop in>
-            <TweenTransform
+            <Transform
                 enterTransform="rotate(360deg)"
                 style={{ display: 'inline-block' }}
             >
                 <h1>Example</h1>
-            </TweenTransform>
+            </Transform>
         </Loop>
     ))
     .add('Blink', () => (
         <Loop in>
-            <FadeInOut>
+            <Fade>
                 <h1>Example</h1>
-            </FadeInOut>
+            </Fade>
         </Loop>
     ));

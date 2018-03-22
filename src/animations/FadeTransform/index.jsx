@@ -1,17 +1,17 @@
 import React from 'react';
 import { bool, node, object } from 'prop-types';
-import FadeInOut from '../FadeInOut';
-import TweenTransform from '../TweenTransform';
+import Fade from '../Fade';
+import Transform from '../Transform';
 
 import { defaultAnimationProps } from 'utilities';
 
 const FadeTransform = ({ children, fadeProps, transformProps, ...props }) => {
     return (
-        <FadeInOut {...props} {...fadeProps}>
-            <TweenTransform {...props} {...transformProps}>
+        <Fade {...props} {...fadeProps}>
+            <Transform {...props} {...transformProps}>
                 {children}
-            </TweenTransform>
-        </FadeInOut>
+            </Transform>
+        </Fade>
     );
 };
 
