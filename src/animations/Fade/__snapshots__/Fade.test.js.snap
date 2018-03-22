@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FadeInOut can accept custom styles 1`] = `
+exports[`Fade can accept custom styles 1`] = `
 <div
   className={undefined}
   style={
@@ -17,7 +17,7 @@ exports[`FadeInOut can accept custom styles 1`] = `
 />
 `;
 
-exports[`FadeInOut renders 1`] = `
+exports[`Fade renders 1`] = `
 <div
   className={undefined}
   style={
@@ -33,7 +33,7 @@ exports[`FadeInOut renders 1`] = `
 />
 `;
 
-exports[`FadeInOut sets transitionDelay with delay prop 1`] = `
+exports[`Fade sets transitionDelay with delay prop 1`] = `
 <div
   className={undefined}
   style={
@@ -49,7 +49,7 @@ exports[`FadeInOut sets transitionDelay with delay prop 1`] = `
 />
 `;
 
-exports[`FadeInOut sets transitionDuration with duration prop 1`] = `
+exports[`Fade sets transitionDuration with duration prop 1`] = `
 <div
   className={undefined}
   style={
@@ -65,7 +65,7 @@ exports[`FadeInOut sets transitionDuration with duration prop 1`] = `
 />
 `;
 
-exports[`FadeInOut sets transitionTimingFunction with timingFn prop 1`] = `
+exports[`Fade sets transitionTimingFunction with timingFn prop 1`] = `
 <div
   className={undefined}
   style={
