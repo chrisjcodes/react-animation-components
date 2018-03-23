@@ -152,7 +152,7 @@ import { FadeTransform } from 'react-animation-components'
         enterOpacity: 0.85,
     }}
 >
-  <h1>I transition from initial positon to rotate 90deg and to 0.85 opacity when `in` is `true`</h1>
+  <h1>I transition from `-100px` horizontally of my initial positon and to 0.85 opacity when `in` is `true`</h1>
 </FadeTransform>
 ```
 
