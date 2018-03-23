@@ -9,6 +9,12 @@ describe('Transform', () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test('can accept className', () => {
+        const component = renderer.create(<Transform className="test" />);
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
     test('can accept custom styles', () => {
         const component = renderer.create(
             <Transform style={{ background: 'black' }} />

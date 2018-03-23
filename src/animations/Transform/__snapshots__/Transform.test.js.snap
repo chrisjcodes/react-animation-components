@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Transform can accept className 1`] = `
+<div
+  className="test"
+  style={
+    Object {
+      "transform": "none",
+      "transitionDelay": "0ms",
+      "transitionDuration": "500ms",
+      "transitionProperty": "transform",
+      "transitionTimingFunction": "ease",
+      "willChange": "transform",
+    }
+  }
+/>
+`;
+
 exports[`Transform can accept custom styles 1`] = `
 <div
   className={undefined}

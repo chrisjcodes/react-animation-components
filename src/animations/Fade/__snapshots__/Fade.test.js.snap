@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Fade can accept className 1`] = `
+<div
+  className="test"
+  style={
+    Object {
+      "opacity": 0,
+      "transitionDelay": "0ms",
+      "transitionDuration": "500ms",
+      "transitionProperty": "opacity",
+      "transitionTimingFunction": "ease",
+      "willChange": "opacity",
+    }
+  }
+/>
+`;
+
 exports[`Fade can accept custom styles 1`] = `
 <div
   className={undefined}
