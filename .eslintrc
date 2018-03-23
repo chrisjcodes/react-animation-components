@@ -4,6 +4,11 @@
         "es6": true,
         "node": true
     },
+    "globals": {
+        "describe": true,
+        "test": true,
+        "expect": true
+    },
     "parser": "babel-eslint",
     "plugins": ["babel", "react"],
     "rules": {

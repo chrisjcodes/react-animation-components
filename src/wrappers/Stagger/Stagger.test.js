@@ -1,6 +1,4 @@
-import React from 'react';
-import Stagger, { getStaggerDelay, getMaxDelay } from './index.jsx';
-import renderer from 'react-test-renderer';
+import { getStaggerDelay, getMaxDelay } from './index.jsx';
 
 describe('Stagger', () => {
     test('getStaggerDelay returns correct delay', () => {
