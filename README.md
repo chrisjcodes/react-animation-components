@@ -2,7 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/unruffledBeaver/react-animation-components.svg?style=flat-square)]()
 
-A set of React Transition Wrapper Components (https://github.com/reactjs/react-transition-group) that provide drop in GPU accelerated animations.
+A set of React components using [React Transition Group](https://github.com/reactjs/react-transition-group) to provide drop in GPU accelerated animations and wrappers for group effects.
 
 [Checkout the Storybook!](http://animationcomponents.com/)
 
