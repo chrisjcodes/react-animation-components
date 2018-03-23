@@ -172,7 +172,7 @@ Uses `TransitionGroup` to stagger `delay` on a set of animation components
 | delay      | The amount to separate each stagger by                            | `1000`             | _number_   | `100`                      |
 | duration   | A value to set the inner child animations transition duration     | `800`              | _number_   | `500`                      |
 | in         | A boolean to tell the children to mount or unmount                | `true`             | _boolean_  | `false`                    |
-| onComplete | A function that is called after the last animation finished       | any valid function | _function_ | `Function.prototype(noop)` |
+| onComplete | A function that is called after the last animation finishes       | any valid function | _function_ | `Function.prototype(noop)` |
 | reverse    | A boolean to tell the component to reverse how delays are applied | `true`             | _boolean_  | `false`                    |
 
 #### Examples
@@ -218,7 +218,7 @@ Uses `TransitionGroup` to randomize `delay` on a set of animation components
 | in         | A boolean to tell the children to mount or unmount                | `true`             | _boolean_  | `false`                    |
 | maxDelay   | Maximum delay possible                                            | `5000`             | _number_   | `1500`                     |
 | minDelay   | Minimum delay possible                                            | `100`              | _number_   | `0`                        |
-| onComplete | A function that is called after the last animation finished       | any valid function | _function_ | `Function.prototype(noop)` |
+| onComplete | A function that is called after the last animation finishes       | any valid function | _function_ | `Function.prototype(noop)` |
 | reverse    | A boolean to tell the component to reverse how delays are applied | `true`             | _boolean_  | `false`                    |
 
 #### Examples
