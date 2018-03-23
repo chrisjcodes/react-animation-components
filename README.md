@@ -8,8 +8,8 @@ A set of React Transition Wrapper Components (https://github.com/reactjs/react-t
 
 *   [Installation](#installation)
 *   [Animation Components](#animation-components)
-    *   [Fade](#Fade)
-    *   [Transform](#Transform)
+    *   [Fade](#fade)
+    *   [Transform](#transform)
     *   [FadeTransform](#fadetransform)
 *   [Wrapper Components](#group-components)
     *   [Stagger](#stagger)
