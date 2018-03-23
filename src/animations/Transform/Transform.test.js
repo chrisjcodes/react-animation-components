@@ -41,17 +41,17 @@ describe('Transform', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('sets start', () => {
+    test('sets enterTransform', () => {
         const component = renderer.create(
-            <Transform start="translateX(10em)" />
+            <Transform enterTransform="translateX(10em)" />
         );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
 
-    test('sets finish', () => {
+    test('sets exitTransform', () => {
         const component = renderer.create(
-            <Transform finish="translateX(10em)" />
+            <Transform exitTransform="translateX(10em)" />
         );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
