@@ -12,6 +12,7 @@ storiesOf('Wrappers/Random', module)
     .add('default', () => (
         <Random
             in={boolean('in', true)}
+            reverse={boolean('reverse', false)}
             minDelay={number('minDelay', 0)}
             maxDelay={number('maxDelay', 1500)}
         >

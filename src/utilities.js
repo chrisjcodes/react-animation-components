@@ -28,3 +28,15 @@ export const createCommonKnobs = knobs => {
         timingFn: knobs.text('timingFn', defaultAnimationProps.timingFn),
     };
 };
+
+export const onceEvery = function(times, func) {
+    const orig = times;
+    return function() {
+        if (--times < 1) {
+            times = orig;
+            return func.apply(this, arguments);
+        }
+
+        return null;
+    };
+};

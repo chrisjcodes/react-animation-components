@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { bool, func, node, number } from 'prop-types';
 import { TransitionGroup } from 'react-transition-group';
-import _after from 'lodash/after';
 import _omit from 'lodash/omit';
+import _reverse from 'lodash/reverse';
 
-import { defaultAnimationProps } from 'utilities';
+import { defaultAnimationProps, onceEvery } from 'utilities';
 
 export const getStaggerDelay = (idx, chunk, delay) => {
     if (chunk) {
@@ -25,10 +25,21 @@ class Stagger extends Component {
         clearTimeout(this.onCompleteTimeout);
     }
 
+    delays = React.Children.map(this.props.children, (_, i) =>
+        getStaggerDelay(
+            i,
+            this.props.chunk,
+            this.props.delay,
+            this.props.duration
+        )
+    );
+
+    reversedDelays = _reverse([...this.delays]);
+
     onCompleteTimeout = null;
     totalChildren = React.Children.count(this.props.children);
 
-    onComplete = () => {
+    onComplete = onceEvery(this.totalChildren, () => {
         const { chunk, delay, duration } = this.props;
         const waitTime = getMaxDelay(
             this.totalChildren,
@@ -37,9 +48,7 @@ class Stagger extends Component {
             duration
         );
         this.onCompleteTimeout = setTimeout(this.props.onComplete, waitTime);
-    };
-
-    onEntered = _after(this.totalChildren, this.onComplete);
+    });
 
     getTransitionGroupProps() {
         return _omit(this.props, [
@@ -48,20 +57,24 @@ class Stagger extends Component {
             'chunk',
             'in',
             'onComplete',
+            'reverse',
         ]);
     }
 
     render() {
-        const { children, chunk, delay, duration, in: inProp } = this.props;
+        const { children, duration, in: inProp, reverse } = this.props;
+
+        const delays = reverse ? this.reversedDelays : this.delays;
 
         return (
             <TransitionGroup {...this.getTransitionGroupProps()}>
                 {inProp &&
                     React.Children.map(children, (child, i) =>
                         React.cloneElement(child, {
-                            delay: getStaggerDelay(i, chunk, delay),
+                            delay: delays[i],
                             duration,
-                            onEntered: this.onEntered,
+                            onEntered: this.onComplete,
+                            onExited: this.onComplete,
                         })
                     )}
             </TransitionGroup>
@@ -76,6 +89,7 @@ Stagger.propTypes = {
     duration: number,
     in: bool,
     onComplete: func,
+    reverse: bool,
 };
 
 Stagger.defaultProps = {
@@ -84,6 +98,7 @@ Stagger.defaultProps = {
     duration: defaultAnimationProps.duration,
     in: false,
     onComplete: Function.prototype,
+    reverse: false,
 };
 
 export default Stagger;
