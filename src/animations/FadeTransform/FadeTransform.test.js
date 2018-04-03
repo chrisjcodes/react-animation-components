@@ -37,17 +37,19 @@ describe('FadeTranform', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('sets start', () => {
+    test('sets tranformProps', () => {
         const component = renderer.create(
-            <FadeTranform start="translateX(10em)" />
+            <FadeTranform
+                transformProps={{ enterTransform: 'translateX(10em)' }}
+            />
         );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
 
-    test('sets finish', () => {
+    test('sets fadeProps', () => {
         const component = renderer.create(
-            <FadeTranform finish="translateX(10em)" />
+            <FadeTranform fadeProps={{ enterOpacity: 0.85 }} />
         );
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();

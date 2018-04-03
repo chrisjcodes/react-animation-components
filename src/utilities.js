@@ -1,6 +1,9 @@
-export const getInlineStyles = (
-    { style = {}, delay, duration, timingFn, ...props } = {}
-) => ({
+export const getInlineStyles = ({
+    style = {},
+    delay,
+    duration,
+    timingFn,
+} = {}) => ({
     ...style,
     transitionDelay: `${delay}ms`,
     transitionDuration: `${duration}ms`,
@@ -15,4 +18,25 @@ export const defaultAnimationProps = {
     delay: 0,
     duration: 500,
     timingFn: 'ease',
+};
+
+export const createCommonKnobs = knobs => {
+    return {
+        inProp: knobs.boolean('in', true),
+        delay: knobs.number('delay', defaultAnimationProps.delay),
+        duration: knobs.number('duration', defaultAnimationProps.duration),
+        timingFn: knobs.text('timingFn', defaultAnimationProps.timingFn),
+    };
+};
+
+export const onceEvery = function(times, func) {
+    const orig = times;
+    return function() {
+        if (--times < 1) {
+            times = orig;
+            return func.apply(this, arguments);
+        }
+
+        return null;
+    };
 };

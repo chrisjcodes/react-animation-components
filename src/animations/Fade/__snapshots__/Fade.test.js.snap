@@ -1,7 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FadeInOut can accept custom styles 1`] = `
+exports[`Fade can accept className 1`] = `
 <div
+  className="test"
+  style={
+    Object {
+      "opacity": 0,
+      "transitionDelay": "0ms",
+      "transitionDuration": "500ms",
+      "transitionProperty": "opacity",
+      "transitionTimingFunction": "ease",
+      "willChange": "opacity",
+    }
+  }
+/>
+`;
+
+exports[`Fade can accept custom styles 1`] = `
+<div
+  className={undefined}
   style={
     Object {
       "background": "black",
@@ -16,8 +33,9 @@ exports[`FadeInOut can accept custom styles 1`] = `
 />
 `;
 
-exports[`FadeInOut renders 1`] = `
+exports[`Fade renders 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -31,8 +49,9 @@ exports[`FadeInOut renders 1`] = `
 />
 `;
 
-exports[`FadeInOut sets transitionDelay with delay prop 1`] = `
+exports[`Fade sets transitionDelay with delay prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -46,8 +65,9 @@ exports[`FadeInOut sets transitionDelay with delay prop 1`] = `
 />
 `;
 
-exports[`FadeInOut sets transitionDuration with duration prop 1`] = `
+exports[`Fade sets transitionDuration with duration prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,
@@ -61,8 +81,9 @@ exports[`FadeInOut sets transitionDuration with duration prop 1`] = `
 />
 `;
 
-exports[`FadeInOut sets transitionTimingFunction with timingFn prop 1`] = `
+exports[`Fade sets transitionTimingFunction with timingFn prop 1`] = `
 <div
+  className={undefined}
   style={
     Object {
       "opacity": 0,

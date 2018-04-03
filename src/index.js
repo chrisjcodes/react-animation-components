@@ -1,16 +1,16 @@
-import FadeInOut from 'animations/FadeInOut';
+import Fade from 'animations/Fade';
 import FadeTransform from 'animations/FadeTransform';
-import TweenTransform from 'animations/TweenTransform';
+import Transform from 'animations/Transform';
 
 import Loop from 'wrappers/Loop';
 import Random from 'wrappers/Random';
 import Stagger from 'wrappers/Stagger';
 
 module.exports = {
-    FadeInOut,
+    Fade,
     FadeTransform,
     Loop,
     Random,
     Stagger,
-    TweenTransform,
+    Transform,
 };

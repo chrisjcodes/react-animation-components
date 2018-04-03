@@ -1,66 +1,31 @@
 import React from 'react';
-import { node, string } from 'prop-types';
-import { Transition } from 'react-transition-group';
-import {
-    defaultAnimationProps,
-    getInlineStyles,
-    getTimeoutValue,
-} from 'utilities';
+import { bool, node, object } from 'prop-types';
+import Fade from '../Fade';
+import Transform from '../Transform';
 
-const statusStyles = {
-    entered: {
-        opacity: 1,
-    },
-    entering: {
-        opacity: 0,
-    },
-    exited: {
-        opacity: 0,
-    },
-    exiting: {
-        opacity: 0,
-    },
-};
+import { defaultAnimationProps } from 'utilities';
 
-const FadeTransform = ({ children, enter, exit, ...props }) => {
-    const pos = {
-        entering: exit,
-        entered: enter,
-        exiting: exit,
-        exited: exit,
-    };
-
+const FadeTransform = ({ children, fadeProps, transformProps, ...props }) => {
     return (
-        <Transition timeout={getTimeoutValue(props)} {...props}>
-            {status => (
-                <div
-                    style={{
-                        ...getInlineStyles(props),
-                        ...statusStyles[status],
-                        transform: pos[status],
-                        transitionProperty: 'transform, opacity',
-                        willChange: 'transform, opacity',
-                    }}
-                >
-                    {children}
-                </div>
-            )}
-        </Transition>
+        <Fade {...props} {...fadeProps}>
+            <Transform {...props} {...transformProps}>
+                {children}
+            </Transform>
+        </Fade>
     );
 };
 
 FadeTransform.propTypes = {
-    appear: bool,
     children: node.isRequired,
-    delay: number,
-    duration: number,
-    exit: string,
-    enter: string,
-    timingFn: string,
+    fadeProps: object,
+    in: bool,
+    transformProps: object,
 };
 
 FadeTransform.defaultProps = {
     ...defaultAnimationProps,
+    fadeProps: {},
+    transformProps: {},
 };
 
 export default FadeTransform;

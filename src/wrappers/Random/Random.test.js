@@ -1,6 +1,4 @@
-import React from 'react';
-import Stagger, { getRandomDelay } from './index.jsx';
-import renderer from 'react-test-renderer';
+import { getRandomDelay } from './index.jsx';
 
 describe('Random', () => {
     test('getRandomDelay returns no more than maxDelay and no less than 0', () => {

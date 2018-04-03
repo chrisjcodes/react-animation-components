@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, object, string } from 'prop-types';
+import { bool, node, number, object, string } from 'prop-types';
 import { Transition } from 'react-transition-group';
 
 import {
@@ -8,18 +8,19 @@ import {
     getTimeoutValue,
 } from 'utilities';
 
-const TweenTransform = ({ children, enter, exit, ...props }) => {
+const Transform = ({ children, enterTransform, exitTransform, ...props }) => {
     const pos = {
-        entering: exit,
-        entered: enter,
-        exiting: exit,
-        exited: exit,
+        entering: exitTransform,
+        entered: enterTransform,
+        exiting: exitTransform,
+        exited: exitTransform,
     };
 
     return (
         <Transition timeout={getTimeoutValue(props)} {...props}>
             {status => (
                 <div
+                    className={props.className}
                     style={{
                         ...getInlineStyles(props),
                         transform: pos[status],
@@ -34,21 +35,22 @@ const TweenTransform = ({ children, enter, exit, ...props }) => {
     );
 };
 
-TweenTransform.propTypes = {
+Transform.propTypes = {
     appear: bool,
     children: node.isRequired,
+    className: string,
     delay: number,
     duration: number,
-    exit: string,
-    enter: string,
+    enterTransform: string,
+    exitTransform: string,
     style: object,
     timingFn: string,
 };
 
-TweenTransform.defaultProps = {
+Transform.defaultProps = {
     ...defaultAnimationProps,
-    enter: 'none',
-    exit: 'none',
+    enterTransform: 'none',
+    exitTransform: 'none',
 };
 
-export default TweenTransform;
+export default Transform;
